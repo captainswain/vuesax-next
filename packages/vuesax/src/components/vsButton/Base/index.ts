@@ -2,7 +2,7 @@ import './style.sass'
 
 import component from './VsButton'
 component.install = (vue: any) => {
-  vue.component('vs-button', component)
+  vue.component('vso-button', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

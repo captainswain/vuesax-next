@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsAvatar'
 
 component.install = (vue: any) => {
-  vue.component('vs-avatar', component)
+  vue.component('vso-avatar', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

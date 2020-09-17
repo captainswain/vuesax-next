@@ -9,20 +9,20 @@ const ripple = (evt: any, color: any = '', solid: boolean = false) => {
 
   let time = 0.6
 
-  if(el.clientWidth > 150) {
+  if (el.clientWidth > 150) {
     time = 1.2
   }
 
   const effectContent = document.createElement('div')
 
-  effectContent.className = 'vs-ripple-content'
+  effectContent.className = 'vso-ripple-content'
 
   const effect = document.createElement('div')
   setColor('color', color, effectContent)
 
-  effect.className = 'vs-ripple'
+  effect.className = 'vso-ripple'
   if (solid) {
-    effect.classList.add('vs-ripple--solid')
+    effect.classList.add('vso-ripple--solid')
     setColor('color', color || 'primary', effectContent)
   }
   effect.style.transition = `all ${time}s ease`
@@ -68,17 +68,17 @@ const rippleReverse = (evt: any) => {
 
   let time = 0.6
 
-  if(el.clientWidth > 150) {
+  if (el.clientWidth > 150) {
     time = 1.2
   }
 
   const effectContent = document.createElement('div')
 
-  effectContent.className = 'vs-ripple-content'
+  effectContent.className = 'vso-ripple-content'
 
   const effect = document.createElement('div')
 
-  effect.className = 'vs-ripple-invert'
+  effect.className = 'vso-ripple-invert'
   // effect.style.transition = `all ${time}s ease`
 
   effect.style.left = `${x}px`
@@ -128,19 +128,19 @@ const rippleCut = (evt: any) => {
 
   let time = 0.6
 
-  if(el.clientWidth > 150) {
+  if (el.clientWidth > 150) {
     time = 1.2
   }
 
   const effectContent = document.createElement('div')
 
-  effectContent.className = 'vs-ripple-content'
+  effectContent.className = 'vso-ripple-content'
 
   const effect = document.createElement('div')
   const effect2 = document.createElement('div')
 
-  effect.className = 'vs-ripple-cut-1'
-  effect2.className = 'vs-ripple-cut-2'
+  effect.className = 'vso-ripple-cut-1'
+  effect2.className = 'vso-ripple-cut-2'
   // effect.style.transition = `all ${time}s ease`
 
   effect.style.left = effect2.style.left = `${x}px`

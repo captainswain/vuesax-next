@@ -22,7 +22,7 @@ export default class VsTableTr extends VsComponent {
 
   @Watch('data')
   handleChangeData() {
-    (this.$el as HTMLElement).style.removeProperty(`--vs-color`)
+    (this.$el as HTMLElement).style.removeProperty(`--vso-color`)
     if (this.instanceExpand) {
       this.instanceExpand.$data.hidden = true
       this.instanceExpand = null
@@ -50,7 +50,7 @@ export default class VsTableTr extends VsComponent {
 
   public render(h: any): VNode {
     return h('tr', {
-      staticClass: 'vs-table__tr',
+      staticClass: 'vso-table__tr',
       on: {
         click: (evt: any) => {
           if (this.$slots.expand) {

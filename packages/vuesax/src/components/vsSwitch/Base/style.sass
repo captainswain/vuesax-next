@@ -8,7 +8,7 @@
   100%
     transform: rotate(360deg)
 
-.vs-switch
+.vso-switch
   color: #fff
   padding: 5px
   border-radius: 20px
@@ -23,27 +23,27 @@
   transition: all .25s ease
   overflow: hidden
   &--icon
-    .vs-switch__input
+    .vso-switch__input
       &:checked
-        ~ .vs-switch__circle
+        ~ .vso-switch__circle
           color: #fff !important
-    .vs-switch__circle
+    .vso-switch__circle
       background: transparent !important
       box-shadow: none !important
       i
         opacity: 1
         font-size: 1.3rem
   &--indeterminate
-    .vs-switch__input
+    .vso-switch__input
       pointer-events: none
-    .vs-switch__circle
+    .vso-switch__circle
       left: 50% !important
       transform: translate(-50%)
   &--square
     border-radius: 5px
-    .vs-switch__background
+    .vso-switch__background
       border-radius: 5px !important
-    .vs-switch__circle
+    .vso-switch__circle
       border-radius: 5px !important
   &:after
     transition: all 0s ease 0s
@@ -80,9 +80,9 @@
     min-width: 28px !important
     pointer-events: none
     border-radius: 20px !important
-    .vs-switch__circle
+    .vso-switch__circle
       border-radius: 50% !important
-    .vs-switch__background
+    .vso-switch__background
       opacity: 0 !important
     &:after
       opacity: 1
@@ -157,12 +157,12 @@
     cursor: pointer
     &:active
       &:checked
-        ~ .vs-switch__circle
+        ~ .vso-switch__circle
           left: calc(100% - 30px)
-      ~ .vs-switch__circle
+      ~ .vso-switch__circle
         width: 25px
     &:checked
-      ~ .vs-switch__background
+      ~ .vso-switch__background
         opacity: 1
         transform: scale(1)
         width: 100%
@@ -170,7 +170,7 @@
         left: 0px
         border-radius: 50%
         transition: all .25s ease
-      ~ .vs-switch__text
+      ~ .vso-switch__text
         padding-left: 5px
         padding-right: 25px
         color: #fff
@@ -184,7 +184,7 @@
           transform: translate(100%)
           position: absolute
           opacity: 0
-      ~ .vs-switch__circle
+      ~ .vso-switch__circle
         left: calc(100% - 24px)
         box-shadow: -5px 0px 25px 0px -color('background', .6)
         color: -color('color')

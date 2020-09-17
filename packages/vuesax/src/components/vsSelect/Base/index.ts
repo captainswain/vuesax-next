@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsSelect'
 
 component.install = (vue: any) => {
-  vue.component('vs-select', component)
+  vue.component('vso-select', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

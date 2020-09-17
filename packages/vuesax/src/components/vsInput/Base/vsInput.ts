@@ -26,7 +26,7 @@ export default class VsInput extends VsComponent {
   _uid: any
 
   get getId() {
-    return `vs-input--${this.$attrs.id || this._uid}`
+    return `vso-input--${this.$attrs.id || this._uid}`
   }
 
   get hasColor() {
@@ -57,8 +57,8 @@ export default class VsInput extends VsComponent {
       },
     }, [
       !!this.$slots[`message-${type}`] && this.$createElement('div', {
-        staticClass: 'vs-input__message',
-        class: [`vs-input__message--${type}`]
+        staticClass: 'vso-input__message',
+        class: [`vso-input__message--${type}`]
       }, [
         this.$slots[`message-${type}`]
       ])
@@ -68,13 +68,13 @@ export default class VsInput extends VsComponent {
   public render(h: any): VNode {
 
     const input = h('input', {
-      staticClass: 'vs-input',
+      staticClass: 'vso-input',
       domProps: {
         value: this.value
       },
       class: [
-        { ['vs-input--has-icon']: !!this.$slots.icon },
-        { ['vs-input--has-icon--after']: !!this.iconAfter }
+        { ['vso-input--has-icon']: !!this.$slots.icon },
+        { ['vso-input--has-icon--after']: !!this.iconAfter }
       ],
       on: {
         ...this.$listeners,
@@ -95,10 +95,10 @@ export default class VsInput extends VsComponent {
         for: this.getId
       },
       class: [
-        'vs-input__label',
-        { 'vs-input__label--placeholder': this.labelPlaceholder },
-        { 'vs-input__label--hidden': this.value !== '' || this.$attrs.type == 'date' || this.$attrs.type == 'time' },
-        { 'vs-input__label--label': this.label }
+        'vso-input__label',
+        { 'vso-input__label--placeholder': this.labelPlaceholder },
+        { 'vso-input__label--hidden': this.value !== '' || this.$attrs.type == 'date' || this.$attrs.type == 'time' },
+        { 'vso-input__label--label': this.label }
       ],
     }, [
       this.label || this.$attrs.placeholder || this.labelPlaceholder
@@ -109,18 +109,18 @@ export default class VsInput extends VsComponent {
         for: this.getId
       },
       class: [
-        'vs-input__label',
-        { 'vs-input__label--hidden': this.value !== '' },
+        'vso-input__label',
+        { 'vso-input__label--hidden': this.value !== '' },
       ],
     }, [
       this.$attrs.placeholder
     ])
 
     const icon = h('span', {
-      staticClass: 'vs-input__icon',
+      staticClass: 'vso-input__icon',
       class: [
-        { 'vs-input__icon--after': this.iconAfter },
-        { 'vs-input__icon--click': !!this.$listeners['click-icon'] }
+        { 'vso-input__icon--after': this.iconAfter },
+        { 'vso-input__icon--click': !!this.$listeners['click-icon'] }
       ],
       on: {
         click: (evt: any) => {
@@ -140,15 +140,15 @@ export default class VsInput extends VsComponent {
     const messagePrimary = this.getMessage('primary')
 
     const progressBar = h('div', {
-      staticClass: 'vs-input__progress',
+      staticClass: 'vso-input__progress',
       class: [
-        { 'vs-input__progress--danger': this.progress < 33 },
-        { 'vs-input__progress--warn': this.progress < 66 && this.progress > 33 },
-        { 'vs-input__progress--success': this.progress > 66 }
+        { 'vso-input__progress--danger': this.progress < 33 },
+        { 'vso-input__progress--warn': this.progress < 66 && this.progress > 33 },
+        { 'vso-input__progress--success': this.progress > 66 }
       ]
     }, [
       h('div', {
-        staticClass: 'vs-input__progress__bar',
+        staticClass: 'vso-input__progress__bar',
         style: {
           width: `${this.progress}%`
         },
@@ -156,31 +156,31 @@ export default class VsInput extends VsComponent {
     ])
 
     const loading = h('div', {
-      staticClass: 'vs-input__loading',
+      staticClass: 'vso-input__loading',
     })
 
     const effects = h('div', {
-      staticClass: 'vs-input__affects',
+      staticClass: 'vso-input__affects',
     }, [
       h('div', {
-        staticClass: 'vs-input__affects__1',
+        staticClass: 'vso-input__affects__1',
       }),
       h('div', {
-        staticClass: 'vs-input__affects__2',
+        staticClass: 'vso-input__affects__2',
       }),
       h('div', {
-        staticClass: 'vs-input__affects__3',
+        staticClass: 'vso-input__affects__3',
       }),
       h('div', {
-        staticClass: 'vs-input__affects__4',
+        staticClass: 'vso-input__affects__4',
       })
     ])
 
     const inputContent = h('div', {
-      staticClass: 'vs-input-content',
+      staticClass: 'vso-input-content',
       class: [
-        { [`vs-input-content--has-color`]: this.hasColor },
-        { [`vs-input-content--has-label`]: this.label || this.labelPlaceholder }
+        { [`vso-input-content--has-color`]: this.hasColor },
+        { [`vso-input-content--has-label`]: this.label || this.labelPlaceholder }
       ]
     }, [
       input,
@@ -192,12 +192,12 @@ export default class VsInput extends VsComponent {
     ])
 
     return h('div', {
-      staticClass: 'vs-input-parent',
+      staticClass: 'vso-input-parent',
       class: [
-        `vs-input-parent--state-${this.state}`,
-        { 'vs-input-parent--border': !!this.border },
-        { 'vs-input-parent--shadow': !!this.shadow },
-        { [`vs-input-content--has-label`]: this.label || this.labelPlaceholder },
+        `vso-input-parent--state-${this.state}`,
+        { 'vso-input-parent--border': !!this.border },
+        { 'vso-input-parent--shadow': !!this.shadow },
+        { [`vso-input-content--has-label`]: this.label || this.labelPlaceholder },
         { block: this.block },
         { transparent: this.transparent },
         { textWhite: this.textWhite },

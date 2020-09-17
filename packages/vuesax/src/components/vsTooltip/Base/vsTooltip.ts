@@ -101,7 +101,7 @@ export default class VsTooltip extends VsComponent {
   }
 
   handleMouseDownNotHover(evt: any) {
-    if (!evt.target.closest('.vs-tooltip') && !evt.target.closest('.vs-tooltip-content')) {
+    if (!evt.target.closest('.vso-tooltip') && !evt.target.closest('.vso-tooltip-content')) {
       this.removeTooltip()
     }
   }
@@ -133,11 +133,11 @@ export default class VsTooltip extends VsComponent {
 
   public render(h: any): VNode {
     const loading = h('div', {
-      staticClass: 'vs-tooltip__loading',
+      staticClass: 'vso-tooltip__loading',
     })
 
     const tooltip = h('div', {
-      staticClass: 'vs-tooltip',
+      staticClass: 'vso-tooltip',
       ref: 'tooltip',
       class: [
         {
@@ -172,7 +172,7 @@ export default class VsTooltip extends VsComponent {
     ])
 
     return h('div', {
-      staticClass: 'vs-tooltip-content',
+      staticClass: 'vso-tooltip-content',
       ref: 'content',
       on: {
         mouseenter: () => {
@@ -197,7 +197,7 @@ export default class VsTooltip extends VsComponent {
     }, [
       h('transition', {
         props: {
-          name: 'vs-tooltip'
+          name: 'vso-tooltip'
         },
       }, [
         this.activeTooltip && tooltip,

@@ -34,10 +34,10 @@ const isColor = (color: string) => {
 
 const setVar = (propertyName: string, value: string, el: any) => {
   if (!el) {
-    document.documentElement.style.setProperty(`--vs-${propertyName}`, value)
+    document.documentElement.style.setProperty(`--vso-${propertyName}`, value)
   } else {
     if (el.nodeName !== '#comment') {
-      el.style.setProperty(`--vs-${propertyName}`, value)
+      el.style.setProperty(`--vso-${propertyName}`, value)
     }
   }
 }
@@ -64,7 +64,7 @@ const setColor = (colorName: string, color: string, el: any, addClass?: boolean)
   let newColor
 
   if (color == 'dark' && el) {
-    el.classList.add('vs-component-dark')
+    el.classList.add('vso-component-dark')
   }
 
   if (isRGB) {
@@ -72,39 +72,39 @@ const setColor = (colorName: string, color: string, el: any, addClass?: boolean)
     newColor = `${arrayColor[0]},${arrayColor[1]},${arrayColor[2]}`
     setVar(colorName, newColor, el)
     if (addClass) {
-      el.classList.add('vs-change-color')
+      el.classList.add('vso-change-color')
     }
   } else if (isHEX) {
     const rgb = hexToRgb(color)
     newColor = `${rgb!.r},${rgb!.g},${rgb!.b}`
     setVar(colorName, newColor, el)
     if (addClass) {
-      el.classList.add('vs-change-color')
+      el.classList.add('vso-change-color')
     }
   } else if (isColor(color)) {
     const style = getComputedStyle(document.body)
-    newColor = style.getPropertyValue('--vs-' + color)
+    newColor = style.getPropertyValue('--vso-' + color)
     setVar(colorName, newColor, el)
     if (addClass) {
-      el.classList.add('vs-change-color')
+      el.classList.add('vso-change-color')
     }
   } else if (isRGBNumbers) {
     setVar(colorName, color, el)
     if (addClass) {
-      el.classList.add('vs-change-color')
+      el.classList.add('vso-change-color')
     }
   } else {
     //     consolee.warn({
-      //       el,
-      //       link: 'https://lusaxweb.github.io/vuesax/',
-//       text: `• Component: ${el.__vue__.$vnode.componentOptions.tag}
-// • Warn info: El formato de la propiedad color es incorrecto
-// • Prop: color
-// • value: ${color}
-// • Valores Permitidos: (RGB, HEX, RGB Numbers, Vuesax Colors)
-// • Example: color="#000" or color="rgb(255,255,255)"`,
-//       title: 'VUESAX'
-//     })
+    //       el,
+    //       link: 'https://lusaxweb.github.io/vuesax/',
+    //       text: `• Component: ${el.__vue__.$vnode.componentOptions.tag}
+    // • Warn info: El formato de la propiedad color es incorrecto
+    // • Prop: color
+    // • value: ${color}
+    // • Valores Permitidos: (RGB, HEX, RGB Numbers, Vuesax Colors)
+    // • Example: color="#000" or color="rgb(255,255,255)"`,
+    //       title: 'VUESAX'
+    //     })
   }
 }
 
@@ -162,7 +162,7 @@ const setCordsPosition = (element: any, parent: any, position: string) => {
     element.classList.add('left')
   }
 
-  if (x - 10 < element.getBoundingClientRect().width  && position == 'left') {
+  if (x - 10 < element.getBoundingClientRect().width && position == 'left') {
     position = 'top'
     element.classList.remove('left')
     element.classList.add('top')

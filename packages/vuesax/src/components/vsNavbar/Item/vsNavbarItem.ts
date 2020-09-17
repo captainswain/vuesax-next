@@ -56,7 +56,7 @@ export default class VsNavbarItem extends VsComponent {
 
   public render(h: any): VNode {
     return h('button', {
-      staticClass: 'vs-navbar__item',
+      staticClass: 'vso-navbar__item',
       class: {
         active: this.active
       },

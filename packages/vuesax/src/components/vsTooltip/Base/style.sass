@@ -2,9 +2,9 @@
 @import '../../../styles/colors'
 @import 'root'
 
-.vs-tooltip-enter-active, .vs-tooltip-leave-active
+.vso-tooltip-enter-active, .vso-tooltip-leave-active
   transition: all .25s ease
-.vs-tooltip-enter, .vs-tooltip-leave-to
+.vso-tooltip-enter, .vso-tooltip-leave-to
   opacity: 0
   &.top
     transform: translate(0,5px)
@@ -16,14 +16,14 @@
     transform: translate(-5px)
 
 .darken
-  .vs-tooltip
-    --vs-color: var(--vs-gray-3)
+  .vso-tooltip
+    --vso-color: var(--vso-gray-3)
     color: #fff
-    &:not(.vs-change-color)
+    &:not(.vso-change-color)
       color: #fff !important
 
 
-.vs-tooltip
+.vso-tooltip
   background: -color('color')
   color: -color('background')
   position: absolute
@@ -156,7 +156,7 @@
     &:after
       box-shadow: 0px 2px 10px 0px rgba(0,0,0, -var(shadow-opacity))
   &.isDark
-    --vs-color: var(--vs-gray-3)
+    --vso-color: var(--vso-gray-3)
     color: #fff
   &.top
     &:after

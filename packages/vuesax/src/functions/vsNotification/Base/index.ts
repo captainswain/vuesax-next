@@ -28,24 +28,24 @@ interface NotificationParams {
 const notificationConstructor = Vue.extend(component)
 
 // tslint:disable-next-line:only-arrow-functions
-notificationConstructor.prototype.close = function() {
+notificationConstructor.prototype.close = function () {
   this.isVisible = false
 }
 
-notificationConstructor.prototype.setLoading = function(val: boolean) {
+notificationConstructor.prototype.setLoading = function (val: boolean) {
   this.loading = val
 }
 
-notificationConstructor.prototype.changeProgress = function(val: number) {
+notificationConstructor.prototype.changeProgress = function (val: number) {
   if (val) {
     this.progress = val
   }
 }
 
-notificationConstructor.prototype.toggleClass = function(val: number) {
+notificationConstructor.prototype.toggleClass = function (val: number) {
   if (val) {
     this.classNotification = val
-    this.$el.closest('.vs-notification-parent').classList.toggle(val)
+    this.$el.closest('.vso-notification-parent').classList.toggle(val)
   }
 }
 
@@ -93,11 +93,11 @@ const notification = (params: NotificationParams = {}) => {
   }
 
   const parent: HTMLElement =
-  document.querySelector(`.vs-notification-parent--${params.position || 'bottom-right'}`) || document.createElement('div')
+    document.querySelector(`.vso-notification-parent--${params.position || 'bottom-right'}`) || document.createElement('div')
 
-  if (!document.querySelector(`.vs-notification-parent--${params.position || 'bottom-right'}`)) {
-    parent.className = 'vs-notification-parent'
-    parent.classList.add(`vs-notification-parent--${params.position || 'bottom-right'}`)
+  if (!document.querySelector(`.vso-notification-parent--${params.position || 'bottom-right'}`)) {
+    parent.className = 'vso-notification-parent'
+    parent.classList.add(`vso-notification-parent--${params.position || 'bottom-right'}`)
   }
 
   if (params.classNotification) {

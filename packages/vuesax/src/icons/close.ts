@@ -7,9 +7,9 @@ export default class VsIconClose extends Vue {
 
   render(h: any): VNode {
     const icon = h('i', {
-      staticClass: 'vs-icon-close',
+      staticClass: 'vso-icon-close',
       class: [
-        `vs-icon-hover-${this.hover}`
+        `vso-icon-hover-${this.hover}`
       ],
       ref: 'icon'
     })

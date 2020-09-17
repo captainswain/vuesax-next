@@ -45,31 +45,31 @@ export default class VsRadio extends VsComponent {
     })
 
     const radioEffect = h('span', {
-      staticClass: 'vs-radio__effect',
+      staticClass: 'vso-radio__effect',
     }, [
       h('span', {
-        staticClass: 'vs-radio__effect__icon'
+        staticClass: 'vso-radio__effect__icon'
       }, [
         this.$slots.icon
       ]),
-      h('span', { staticClass: 'vs-radio__effect__loading' })
+      h('span', { staticClass: 'vso-radio__effect__loading' })
     ])
 
     const label = h('label', {
-      staticClass: 'vs-radio__label',
+      staticClass: 'vso-radio__label',
       attrs: {
         for: this._uid
       }
-    }, [ this.$slots.default ])
+    }, [this.$slots.default])
 
     const radio = h('div', {
-      staticClass: 'vs-radio'
+      staticClass: 'vso-radio'
     }, [
       radioInput,
       radioEffect,
     ])
     return h('div', {
-      staticClass: 'vs-radio-content',
+      staticClass: 'vso-radio-content',
       class: {
         disabled: this.disabled,
         loading: this.loading,

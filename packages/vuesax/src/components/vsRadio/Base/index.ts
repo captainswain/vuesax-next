@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsRadio'
 
 component.install = (vue: any) => {
-  vue.component('vs-radio', component)
+  vue.component('vso-radio', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

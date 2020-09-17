@@ -14,7 +14,7 @@ export default class VsAvatarGroup extends VsComponent {
 
   public render(h: any): VNode {
     return h('div', {
-      staticClass: 'vs-avatar__group',
+      staticClass: 'vso-avatar__group',
       class: {
         float: this.float
       }

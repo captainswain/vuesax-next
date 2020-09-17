@@ -2,19 +2,19 @@
 @import '../../../styles/colors'
 @import 'root'
 
-.vs-checkbox-content
+.vso-checkbox-content
   display: flex
   align-items: center
   justify-content: flex-start
 
-.vs-checkbox-con
+.vso-checkbox-con
   width: 23px
   height: 23px
   border-radius: 9px
   position: relative
   z-index: 1
 
-.vs-checkbox-mask
+.vso-checkbox-mask
   border-radius: 32%
   width: 100%
   height: 100%
@@ -30,7 +30,7 @@
   justify-content: center
   z-index: -1
   box-sizing: border-box
-  i:not(.vs-icon-check)
+  i:not(.vso-icon-check)
     opacity: 0
     transition: all .25s ease
     color: #fff
@@ -61,11 +61,11 @@
     z-index: -1
     border: 2px solid -color('gray-4', 1)
     box-sizing: border-box
-  .vs-icon-check
+  .vso-icon-check
     opacity: 0
     z-index: 200
 
-.vs-checkbox
+.vso-checkbox
   position: absolute
   width: 100%
   height: 100%
@@ -80,26 +80,26 @@
     opacity: 0
     pointer-events: none
   &:active
-    ~ .vs-checkbox-mask
+    ~ .vso-checkbox-mask
       background: -color('gray-4', 1) !important
   &:hover
-    ~ .vs-checkbox-mask
+    ~ .vso-checkbox-mask
       background: -color('gray-3', 1)
       &:before
         border: 2px solid -color('gray-4', 0)
       // border: 2px solid -color('gray-3', 1)
   &:checked
     &:hover
-      ~ .vs-checkbox-mask
+      ~ .vso-checkbox-mask
         box-shadow: 0px 3px 15px 0px -color('color', .35)
-    ~ .vs-checkbox-mask
+    ~ .vso-checkbox-mask
       // border: 2px solid -color('color', 1) !important
       box-shadow: 0px 0px 0px 0px -color('color', .35)
-      i:not(.vs-icon-check)
+      i:not(.vso-icon-check)
         opacity: 1
         transform: scale(1)
         transition: all .25s ease .15s
-      .vs-icon-check
+      .vso-icon-check
         opacity: 1
         span
           .line1
@@ -117,7 +117,7 @@
         opacity: 0
         transform: scale(1.2)
 
-.vs-checkbox-label
+.vso-checkbox-label
   user-select: none
   cursor: pointer
   padding: 7px
@@ -135,24 +135,24 @@
     content: ''
     transition: all .25s ease
 
-.vs-checkbox--disabled
+.vso-checkbox--disabled
   pointer-events: none
-  .vs-checkbox-label
+  .vso-checkbox-label
     opacity: .5
-  .vs-checkbox-mask
+  .vso-checkbox-mask
     opacity: .6
     background: transparent !important
 
-.vs-checkbox--checked
+.vso-checkbox--checked
   .lineThrough
     opacity: .4
     &:before
       width: calc(100% - 10px)
 
-.vs-checkbox--loading
+.vso-checkbox--loading
   pointer-events: none
-  &.vs-checkbox--checked
-    .vs-checkbox-mask
+  &.vso-checkbox--checked
+    .vso-checkbox-mask
       background: transparent !important
       &:before
         border-radius: 50%
@@ -163,7 +163,7 @@
       &:after
         opacity: 0
         transform: scale(.5)
-  .vs-checkbox-mask
+  .vso-checkbox-mask
     background: transparent !important
     &:before
       border-radius: 50%
@@ -177,6 +177,6 @@
   100%
     transform: rotate(360deg)
 
-.vs-checkbox--label-before
-  .vs-checkbox-label
+.vso-checkbox--label-before
+  .vso-checkbox-label
     order: -1

@@ -20,21 +20,21 @@ export default class VsTableTh extends VsComponent {
     })
 
     const icons = h('div', {
-      staticClass: 'vs-table__th__content__icons'
+      staticClass: 'vso-table__th__content__icons'
     }, [
       icon,
       icon2
     ])
 
     const content = h('div', {
-      staticClass: 'vs-table__th__content',
+      staticClass: 'vso-table__th__content',
     }, [
       this.$slots.default,
       this.sort && icons
     ])
 
     return h('th', {
-      staticClass: 'vs-table__th',
+      staticClass: 'vso-table__th',
       class: {
         sort: this.sort
       },

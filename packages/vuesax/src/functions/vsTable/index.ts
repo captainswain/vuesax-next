@@ -35,8 +35,8 @@ const getSearch = (data: any, search: string = ''): any => {
   function flattenDeep(val: any): any {
     return Object.values(val || []).reduce(
       (acc: any, val: any) => (typeof val === 'object') ?
-      acc.concat(flattenDeep(val)) :
-      acc.concat(val), [])
+        acc.concat(flattenDeep(val)) :
+        acc.concat(val), [])
   }
 
   function getValues(obj: any) {
@@ -77,7 +77,7 @@ const sortData = (evt: any, data: any, sortKey: string, type: string) => {
   el.dataset[`sortType`] = sortType
   el.dataset[`sortKey`] = `sortType${sortKey}`
 
-  const parent = el.closest('.vs-table__tr')
+  const parent = el.closest('.vso-table__tr')
   const ths = parent.querySelectorAll('th.sort')
   ths.forEach((th: any) => {
     if (th != el) {

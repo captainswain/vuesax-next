@@ -123,14 +123,14 @@ export default class VsAlert extends VsComponent {
 
   render(h: any): VNode {
     const icon = h('div', {
-      staticClass: 'vs-alert__icon',
+      staticClass: 'vso-alert__icon',
       ref: 'icon'
     }, [
       this.$slots.icon
     ])
 
     const contentText = h('div', {
-      staticClass: 'vs-alert__content__text',
+      staticClass: 'vso-alert__content__text',
       ref: 'text'
     }, [
       this.$slots.default,
@@ -143,17 +143,17 @@ export default class VsAlert extends VsComponent {
         enter: this.enter,
         leave: this.leave
       },
-    }, [ !this.hiddenContent &&
+    }, [!this.hiddenContent &&
       h('div', {
-        staticClass: 'vs-alert__content',
+        staticClass: 'vso-alert__content',
         ref: 'content'
       }, [contentText])
     ])
 
     const title = h('div', {
-      staticClass: 'vs-alert__title',
+      staticClass: 'vso-alert__title',
       class: {
-        'vs-alert__title--clickHidden': typeof this.hiddenContent === 'boolean'
+        'vso-alert__title--clickHidden': typeof this.hiddenContent === 'boolean'
       },
       on: {
         click: this.handleClickHidden
@@ -171,7 +171,7 @@ export default class VsAlert extends VsComponent {
     ])
 
     const closeBtn = h('button', {
-      staticClass: 'vs-alert__close',
+      staticClass: 'vso-alert__close',
       on: {
         click: this.handleClickClose
       }
@@ -184,13 +184,13 @@ export default class VsAlert extends VsComponent {
     ])
 
     const pagination = h('div', {
-      staticClass: 'vs-alert__pagination'
+      staticClass: 'vso-alert__pagination'
     }, [
       h('button', {
         on: {
           click: this.handleClickPrevPage
         }
-      } , '<'),
+      }, '<'),
       h('span', `${this.page} / ${this.getTotalPages}`),
       h('button', {
         on: {
@@ -200,16 +200,16 @@ export default class VsAlert extends VsComponent {
     ])
 
     const footer = h('div', {
-      staticClass: 'vs-alert__footer',
+      staticClass: 'vso-alert__footer',
     }, [
       this.$slots.footer
     ])
 
     const progress = h('div', {
-      staticClass: 'vs-alert__progress',
+      staticClass: 'vso-alert__progress',
     }, [
       h('div', {
-        staticClass: 'vs-alert__progress__bar',
+        staticClass: 'vso-alert__progress__bar',
         style: {
           width: `${this.progress}%`
         }
@@ -217,15 +217,15 @@ export default class VsAlert extends VsComponent {
     ])
 
     const render = h('div', {
-      staticClass: 'vs-alert',
+      staticClass: 'vso-alert',
       class: [
-        { [`vs-alert--solid`] : !!this.solid },
-        { [`vs-alert--border`] : !!this.border },
-        { [`vs-alert--shadow`] : !!this.shadow },
-        { [`vs-alert--gradient`] : !!this.gradient },
-        { [`vs-alert--flat`] : !!this.flat },
-        { [`vs-alert--relief`] : !!this.relief },
-        { [`vs-alert--pages`] : this.getPages.length > 0 },
+        { [`vso-alert--solid`]: !!this.solid },
+        { [`vso-alert--border`]: !!this.border },
+        { [`vso-alert--shadow`]: !!this.shadow },
+        { [`vso-alert--gradient`]: !!this.gradient },
+        { [`vso-alert--flat`]: !!this.flat },
+        { [`vso-alert--relief`]: !!this.relief },
+        { [`vso-alert--pages`]: this.getPages.length > 0 },
       ],
     }, [
       this.$slots.icon && icon,

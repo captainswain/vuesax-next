@@ -16,18 +16,18 @@ function FileSass(name) {
 @import '../../../styles/colors'
 @import 'root'
 
-.vs-${name.toLowerCase()}-content
+.vso-${name.toLowerCase()}-content
   background: -color('color')
 
-.vs-${name.toLowerCase()}
+.vso-${name.toLowerCase()}
   background: #000
   color: #fff
   `.trim()
 }
 
 function FileRootSass(name) {
-  return `.vs-${name.toLowerCase()}-content
-  --vs-color: var(--vs-primary)`.trim()
+  return `.vso-${name.toLowerCase()}-content
+  --vso-color: var(--vso-primary)`.trim()
 }
 
 function FileIndexTs(name) {
@@ -35,7 +35,7 @@ function FileIndexTs(name) {
 import component from './Vs${name}'
 
 component.install = (vue: any) => {
-  vue.component('vs-${name.toLowerCase()}', component)
+  vue.component('vso-${name.toLowerCase()}', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -59,13 +59,13 @@ export default class Vs${name} extends VsComponent {
 
   public render(h: any): VNode {
     const ${name.toLowerCase()} = h('div', {
-      staticClass: 'vs-${name.toLowerCase()}'
+      staticClass: 'vso-${name.toLowerCase()}'
     }, [
       this.$slots.default
     ])
 
     return h('button', {
-      staticClass: 'vs-${name.toLowerCase()}-content',
+      staticClass: 'vso-${name.toLowerCase()}-content',
     }, [
       ${name.toLowerCase()}
     ])
@@ -81,7 +81,7 @@ function addComponentExport(name) {
   sed('-i', '// new component slot', `export { default as vs${name} } from './vs${name}/Base/index'\n// new component slot`, './src/components/index.ts');
 }
 
-console.log(boxen('New Component Options', {padding: 1, margin: 2 , borderColor: 'yellow', borderStyle: 'round'}));
+console.log(boxen('New Component Options', { padding: 1, margin: 2, borderColor: 'yellow', borderStyle: 'round' }));
 
 var questions = [
   {
@@ -90,9 +90,9 @@ var questions = [
     message: 'What is the name of the new component?',
     filter: String,
     validate: (value) => {
-      if(test('-e', `src/components/vs${value}`)) {
+      if (test('-e', `src/components/vs${value}`)) {
         return 'This component already exists';
-      } else if(!/^[A-Z]/.test(value)) {
+      } else if (!/^[A-Z]/.test(value)) {
         return 'This component name not Capitalize';
       } else {
         return true
@@ -105,9 +105,9 @@ var questions = [
 function FileComponentExample(name) {
   return `<template>
   <div class="center">
-    <vs-${name.toLowerCase()}>
+    <vso-${name.toLowerCase()}>
       Hola mundo
-    </vs-${name.toLowerCase()}>
+    </vso-${name.toLowerCase()}>
   </div>
 </template>
 <script>

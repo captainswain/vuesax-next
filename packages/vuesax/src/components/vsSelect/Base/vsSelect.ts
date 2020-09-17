@@ -153,7 +153,7 @@ export default class VsSelect extends VsComponent {
   get getChips() {
     const chip = (item: any, isCollapse: boolean): VNode => {
       return this.$createElement('span', {
-        staticClass: 'vs-select__chips__chip',
+        staticClass: 'vso-select__chips__chip',
         attrs: {
           'data-value': item.value
         },
@@ -165,7 +165,7 @@ export default class VsSelect extends VsComponent {
       }, [
         item.label,
         !isCollapse && this.$createElement('span', {
-          staticClass: 'vs-select__chips__chip__close',
+          staticClass: 'vso-select__chips__chip__close',
           on: {
             click: () => {
               setTimeout(() => {
@@ -249,11 +249,11 @@ export default class VsSelect extends VsComponent {
     } else if (evt.code == 'Enter') {
       event.preventDefault()
       if (!this.childOptions[this.hoverOption].disabled) {
-          this.clickOption(this.childOptions[this.hoverOption].value, this.childOptions[this.hoverOption].label)
-          if (!this.multiple) {
-            this.handleBlur();
-            (this.$refs.input as HTMLElement).blur()
-          }
+        this.clickOption(this.childOptions[this.hoverOption].value, this.childOptions[this.hoverOption].label)
+        if (!this.multiple) {
+          this.handleBlur();
+          (this.$refs.input as HTMLElement).blur()
+        }
       }
     }
 
@@ -346,8 +346,8 @@ export default class VsSelect extends VsComponent {
       },
     }, [
       !!this.$slots[`message-${type}`] && this.$createElement('div', {
-        staticClass: 'vs-select__message',
-        class: [`vs-select__message--${type}`]
+        staticClass: 'vso-select__message',
+        class: [`vso-select__message--${type}`]
       }, [
         this.$slots[`message-${type}`]
       ])
@@ -427,10 +427,10 @@ export default class VsSelect extends VsComponent {
 
     const options = h('transition', {
       props: {
-        name: 'vs-select'
+        name: 'vso-select'
       },
-    }, [ this.activeOptions && h('div', {
-      staticClass: 'vs-select__options',
+    }, [this.activeOptions && h('div', {
+      staticClass: 'vso-select__options',
       ref: 'options',
       class: {
         isColorDark: this.isColorDark
@@ -446,18 +446,18 @@ export default class VsSelect extends VsComponent {
         }
       }
     }, [
-        h('div', {
-          staticClass: 'vs-select__options__content',
-          ref: 'content'
+      h('div', {
+        staticClass: 'vso-select__options__content',
+        ref: 'content'
+      }, [
+        this.notData && h('div', {
+          staticClass: 'vso-select__options__content__not-data'
         }, [
-          this.notData && h('div', {
-            staticClass: 'vs-select__options__content__not-data'
-          }, [
-            this.$slots.notData || 'No data available'
-          ]),
-          this.$slots.default
-        ])
+          this.$slots.notData || 'No data available'
+        ]),
+        this.$slots.default
       ])
+    ])
     ])
 
     const input = h('input', {
@@ -465,7 +465,7 @@ export default class VsSelect extends VsComponent {
         readonly: !this.filter && true,
         id: !this.multiple && this._uid
       },
-      staticClass: 'vs-select__input',
+      staticClass: 'vso-select__input',
       ref: 'input',
       domProps: {
         value: this.activeFilter ? this.textFilter : this.getValueLabel
@@ -495,7 +495,7 @@ export default class VsSelect extends VsComponent {
     }, this.$slots.default)
 
     const chips = h('button', {
-      staticClass: 'vs-select__chips',
+      staticClass: 'vso-select__chips',
       ref: 'chips',
       on: {
         keydown: this.handleKeydown,
@@ -513,9 +513,9 @@ export default class VsSelect extends VsComponent {
     }, [
       ...this.getChips,
       this.filter && h('input', {
-        staticClass: 'vs-select__chips__input',
+        staticClass: 'vso-select__chips__input',
         ref: 'chips_input',
-        attrs:  {
+        attrs: {
           placeholder: this.placeholder,
           id: this._uid
         },
@@ -551,30 +551,30 @@ export default class VsSelect extends VsComponent {
     })
 
     const label = h('label', {
-      staticClass: 'vs-select__label',
+      staticClass: 'vso-select__label',
       attrs: {
         for: this._uid
       },
       class: {
-        'vs-select__label--placeholder': this.labelPlaceholder,
-        'vs-select__label--label': this.label,
-        'vs-select__label--hidden': this.value,
+        'vso-select__label--placeholder': this.labelPlaceholder,
+        'vso-select__label--label': this.label,
+        'vso-select__label--hidden': this.value,
       }
     }, [this.labelPlaceholder || this.label])
 
     const placeholder = h('label', {
-      staticClass: 'vs-select__label',
+      staticClass: 'vso-select__label',
       ref: 'placeholder',
       attrs: {
         for: this._uid
       },
       class: {
-        'vs-select__label--hidden': this.value || this.textFilter,
+        'vso-select__label--hidden': this.value || this.textFilter,
       }
     }, [this.placeholder])
 
     const loading = h('div', {
-      staticClass: 'vs-select__loading',
+      staticClass: 'vso-select__loading',
     })
 
     const messageSuccess = this.getMessage('success')
@@ -586,12 +586,12 @@ export default class VsSelect extends VsComponent {
     const messagePrimary = this.getMessage('primary')
 
     const selectContent = h('div', {
-      staticClass: 'vs-select',
+      staticClass: 'vso-select',
       ref: 'select',
       class: [
-        `vs-select--state-${this.state}`,
+        `vso-select--state-${this.state}`,
         {
-          'vs-select--disabled': this.disabled,
+          'vso-select--disabled': this.disabled,
           'activeOptions': this.activeOptions,
           'loading': this.loading
         }
@@ -617,8 +617,8 @@ export default class VsSelect extends VsComponent {
       icon
     ])
 
-    return  h('div', {
-      staticClass: 'vs-select-content',
+    return h('div', {
+      staticClass: 'vso-select-content',
       class: {
         block: this.block
       }

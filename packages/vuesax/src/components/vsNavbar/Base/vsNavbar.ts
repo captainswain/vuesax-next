@@ -96,7 +96,7 @@ export default class VsNavbar extends VsComponent {
   }
 
   handleResize() {
-    const active: HTMLElement = this.$el.querySelector('.vs-navbar__item.active')
+    const active: HTMLElement = this.$el.querySelector('.vso-navbar__item.active')
     if (active) {
       this.setLeftLine(active.offsetLeft, false)
     } else {
@@ -129,7 +129,7 @@ export default class VsNavbar extends VsComponent {
       const left: any = this.$refs.left
       const center: any = this.$refs.center
       const right: any = this.$refs.right
-      this.collapsedWidth =  left.offsetWidth + center.offsetWidth + right.offsetWidth + 150
+      this.collapsedWidth = left.offsetWidth + center.offsetWidth + right.offsetWidth + 150
       const navbar: any = this.$el
       if (navbar.offsetWidth < this.collapsedWidth) {
         this.collapsedForced = true
@@ -145,28 +145,28 @@ export default class VsNavbar extends VsComponent {
 
   public render(h: any): VNode {
     const left = h('div', {
-      staticClass: 'vs-navbar__left',
+      staticClass: 'vso-navbar__left',
       ref: 'left'
     }, [
       this.$slots.left
     ])
 
     const center = h('div', {
-      staticClass: 'vs-navbar__center',
+      staticClass: 'vso-navbar__center',
       ref: 'center'
     }, [
       this.$slots.default
     ])
 
     const right = h('div', {
-      staticClass: 'vs-navbar__right',
+      staticClass: 'vso-navbar__right',
       ref: 'right'
     }, [
       this.$slots.right
     ])
 
     const line = h('div', {
-      staticClass: 'vs-navbar__line',
+      staticClass: 'vso-navbar__line',
       class: {
         notTransition: this.lineNotTransition
       },
@@ -177,7 +177,7 @@ export default class VsNavbar extends VsComponent {
     })
 
     const navbar = h('div', {
-      staticClass: 'vs-navbar'
+      staticClass: 'vso-navbar'
     }, [
       (this.leftCollapsed ? !this.collapsedForced : true) && left,
       (this.centerCollapsed ? !this.collapsedForced : true) && center,
@@ -185,7 +185,7 @@ export default class VsNavbar extends VsComponent {
     ])
 
     return h('div', {
-      staticClass: 'vs-navbar-content',
+      staticClass: 'vso-navbar-content',
       class: {
         fixed: this.fixed,
         shadow: this.shadow,

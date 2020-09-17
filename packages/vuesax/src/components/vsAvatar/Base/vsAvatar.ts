@@ -68,13 +68,13 @@ export default class VsAvatar extends VsComponent {
 
   @Watch('badgeColor')
   handleBadgeColor() {
-    setColor('badge', this.badgeColor , this.$el)
-    this.$el.classList.add('vs-change-color-badge')
+    setColor('badge', this.badgeColor, this.$el)
+    this.$el.classList.add('vso-change-color-badge')
   }
 
   mounted() {
-    setColor('badge', this.badgeColor , this.$el)
-    this.$el.classList.add('vs-change-color-badge')
+    setColor('badge', this.badgeColor, this.$el)
+    this.$el.classList.add('vso-change-color-badge')
     if (this.getParent()) {
       this.index = this.getParent().avatars.length
       this.getParent().avatars.push(this)
@@ -83,21 +83,21 @@ export default class VsAvatar extends VsComponent {
 
   public render(h: any): VNode {
     const writing = h('div', {
-      staticClass: 'vs-avatar__points'
+      staticClass: 'vso-avatar__points'
     }, [
       h('div', {
-        staticClass: 'vs-avatar__points__point'
+        staticClass: 'vso-avatar__points__point'
       }),
       h('div', {
-        staticClass: 'vs-avatar__points__point'
+        staticClass: 'vso-avatar__points__point'
       }),
       h('div', {
-        staticClass: 'vs-avatar__points__point'
+        staticClass: 'vso-avatar__points__point'
       })
     ])
 
     const badge = h('div', {
-      staticClass: 'vs-avatar__badge',
+      staticClass: 'vso-avatar__badge',
       class: [{
         isSlot: this.$slots.badge,
         writing: this.writing
@@ -107,9 +107,9 @@ export default class VsAvatar extends VsComponent {
     ])
 
     const avatar = h('div', {
-      staticClass: 'vs-avatar',
+      staticClass: 'vso-avatar',
       class: {
-          [`vs-avatar--letter--${this.textLength}`]: this.textLength > 2
+        [`vso-avatar--letter--${this.textLength}`]: this.textLength > 2
       }
     }, [
       this.$slots.text && this.getText,
@@ -117,15 +117,15 @@ export default class VsAvatar extends VsComponent {
     ])
 
     const loading = h('div', {
-      staticClass: 'vs-avatar__loading',
+      staticClass: 'vso-avatar__loading',
     }, [
       h('div', {
-        staticClass: 'vs-avatar__loading__animate'
+        staticClass: 'vso-avatar__loading__animate'
       })
     ])
 
     const latest = h('div', {
-      staticClass: 'vs-avatar__latest',
+      staticClass: 'vso-avatar__latest',
       directives: [
         {
           name: 'show',
@@ -137,13 +137,13 @@ export default class VsAvatar extends VsComponent {
     ])
 
     const icons = h('div', {
-      staticClass: 'vs-avatar__icons',
+      staticClass: 'vso-avatar__icons',
     }, [
       this.$slots.icons
     ])
 
     return h('div', {
-      staticClass: 'vs-avatar-content',
+      staticClass: 'vso-avatar-content',
       attrs: {
         ...this.$attrs
       },
@@ -158,12 +158,12 @@ export default class VsAvatar extends VsComponent {
       class: {
         'history': this.history,
         'history--gradient': this.historyGradient,
-        'vs-avatar-content--circle': this.circle,
-        'vs-avatar-content--square': this.square,
-        'vs-avatar-content--hidden': this.isHidden,
-        'vs-avatar-content--latest': this.isLatest,
-        'vs-avatar-content--hasIcons': this.$slots.icons,
-        [`vs-avatar-content--size--${this.size}`]: this.size,
+        'vso-avatar-content--circle': this.circle,
+        'vso-avatar-content--square': this.square,
+        'vso-avatar-content--hidden': this.isHidden,
+        'vso-avatar-content--latest': this.isLatest,
+        'vso-avatar-content--hasIcons': this.$slots.icons,
+        [`vso-avatar-content--size--${this.size}`]: this.size,
       }
     }, [
       this.loading && loading,

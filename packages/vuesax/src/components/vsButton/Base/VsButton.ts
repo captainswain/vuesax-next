@@ -55,40 +55,41 @@ export default class VsButton extends VsComponent {
   public render(h: any): VNode {
 
     const defaultSlot = h('div', {
-      staticClass: 'vs-button__content'
-    }, this.$slots.default )
+      staticClass: 'vso-button__content'
+    }, this.$slots.default)
 
     const animateSlot = h('div', {
-      staticClass: 'vs-button__animate',
+      staticClass: 'vso-button__animate',
       class: [
-        `vs-button__animate--${this.animationType}`
+        `vso-button__animate--${this.animationType}`
       ]
-    }, this.$slots.animate )
+    }, this.$slots.animate)
 
     const loadingElement = h('div', {
-      staticClass: 'vs-button__loading'
+      staticClass: 'vso-button__loading'
     })
 
     const btn = h('button', {
-      staticClass: 'vs-button',
+      staticClass: 'vso-button',
       class: [
-        // `vs-button--${this.color.replace('#', '')}`,
-        `vs-button--${this.componentColor}`,
-        `vs-button--size-${this.size}`,
-        { [`vs-button--fff`] : this.color === '#fff' },
-        { [`vs-button--active`] : !!this.active },
-        { [`vs-button--active-disabled`] : !!this.activeDisabled },
-        { [`vs-button--icon`] : !!this.icon },
-        { [`vs-button--circle`] : !!this.circle },
-        { [`vs-button--square`] : !!this.square },
-        { [`vs-button--loading`] : !!this.loading },
-        { [`vs-button--upload`] : !!this.upload },
-        { [`vs-button--block`] : !!this.block },
-        { [`vs-button--animate`] : !!this.$slots.animate },
-        { [`vs-button--animate-${this.animationType}`] : !!this.animationType },
-        { [`vs-button--animate-inactive`] : !!this.animateInactive },
+        // `vso-button--${this.color.replace('#', '')}`,
+        `vso-button--${this.componentColor}`,
+        `vso-button--size-${this.size}`,
+        { [`vso-button--fff`]: this.color === '#fff' },
+        { [`vso-button--active`]: !!this.active },
+        { [`vso-button--active-disabled`]: !!this.activeDisabled },
+        { [`vso-button--icon`]: !!this.icon },
+        { [`vso-button--circle`]: !!this.circle },
+        { [`vso-button--square`]: !!this.square },
+        { [`vso-button--loading`]: !!this.loading },
+        { [`vso-button--upload`]: !!this.upload },
+        { [`vso-button--block`]: !!this.block },
+        { [`vso-button--animate`]: !!this.$slots.animate },
+        { [`vso-button--animate-${this.animationType}`]: !!this.animationType },
+        { [`vso-button--animate-inactive`]: !!this.animateInactive },
 
-        { [`vs-button--default`] :
+        {
+          [`vso-button--default`]:
           !this.flat &&
           !this.border &&
           !this.gradient &&
@@ -97,13 +98,13 @@ export default class VsButton extends VsComponent {
           !this.shadow &&
           !this.floating
         },
-        { [`vs-button--flat`] : !!this.flat },
-        { [`vs-button--border`] : !!this.border },
-        { [`vs-button--gradient`] : !!this.gradient },
-        { [`vs-button--relief`] : !!this.relief },
-        { [`vs-button--transparent`] : !!this.transparent },
-        { [`vs-button--shadow`] : !!this.shadow },
-        { [`vs-button--floating`] : !!this.floating },
+        { [`vso-button--flat`]: !!this.flat },
+        { [`vso-button--border`]: !!this.border },
+        { [`vso-button--gradient`]: !!this.gradient },
+        { [`vso-button--relief`]: !!this.relief },
+        { [`vso-button--transparent`]: !!this.transparent },
+        { [`vso-button--shadow`]: !!this.shadow },
+        { [`vso-button--floating`]: !!this.floating },
       ],
       attrs: {
         ...this.$attrs
@@ -121,10 +122,10 @@ export default class VsButton extends VsComponent {
               ripple(
                 evt,
                 (this.componentColor || this.color || 'primary') &&
-                !this.active &&
-                document.activeElement !== this.$el ?
-                this.componentColor || this.color :
-                null,
+                  !this.active &&
+                  document.activeElement !== this.$el ?
+                  this.componentColor || this.color :
+                  null,
                 this.flat && !this.active && document.activeElement !== this.$el
               )
             } else {
@@ -146,7 +147,7 @@ export default class VsButton extends VsComponent {
           this.$emit('click', evt)
         }
       }
-    }, [ defaultSlot, this.$slots.animate ? animateSlot : null , this.loading ? loadingElement : null ] )
+    }, [defaultSlot, this.$slots.animate ? animateSlot : null, this.loading ? loadingElement : null])
     return btn
   }
 }

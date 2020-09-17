@@ -15,23 +15,23 @@ export default class VsNavbarGroup extends VsComponent {
     const width = (this.$refs.item as any).scrollWidth
     parent.setWidthLine(width)
   }
-  setWidthLine() {}
+  setWidthLine() { }
 
   public render(h: any): VNode {
     const item = h('button', {
-      staticClass: 'vs-navbar__group__item',
+      staticClass: 'vso-navbar__group__item',
       ref: 'item'
     }, [
       this.$slots.default
     ])
     const items = h('div', {
-      staticClass: 'vs-navbar__group__items'
+      staticClass: 'vso-navbar__group__items'
     }, [
       this.$slots.items
     ])
 
     return h('div', {
-      staticClass: 'vs-navbar__group',
+      staticClass: 'vso-navbar__group',
     }, [
       item,
       items

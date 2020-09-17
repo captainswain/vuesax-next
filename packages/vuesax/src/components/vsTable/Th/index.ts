@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsTableTh'
 
 component.install = (vue: any) => {
-  vue.component('vs-th', component)
+  vue.component('vso-th', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

@@ -3,14 +3,14 @@
 @import 'root'
 
 @mixin state($color)
-  .vs-select__input
+  .vso-select__input
     // border: 2px solid -color($color,.5)
     background: -color($color,.05)
     color: -color($color,1)
     &:hover
       // border: 2px solid -color($color, 0)
       color: -color('text',1)
-  .vs-select__chips
+  .vso-select__chips
     background: -color($color,.05)
     color: -color($color,1)
     &:hover
@@ -26,21 +26,21 @@
       border: 2px solid -color($color,.5)
       border-radius: inherit
       transition: all .25s ease
-  .vs-select__label
+  .vso-select__label
     color: -color($color,1)
-  .vs-select__icon
+  .vso-select__icon
     color: -color($color,1)
     background: -color($color,.1)
     box-shadow: -15px 10px 10px -10px -color($color,.1)
-  .vs-icon-arrow
+  .vso-icon-arrow
     &:after
       background: -color($color,1)
     &:before
       background: -color($color,1)
 
-.vs-select-enter-active
+.vso-select-enter-active
   transition: all .25s ease
-.vs-select-enter
+.vso-select-enter
   opacity: 0
   transform: translate(0, -10px)
   transition: all .25s ease
@@ -49,9 +49,9 @@
     opacity: 0 !important
     box-shadow: 0px 0px 0px 0px rgba(0,0,0, -var(shadow-opacity))
 
-.vs-select-leave-active
+.vso-select-leave-active
   transition: all .25s ease
-.vs-select-leave-to
+.vso-select-leave-to
   opacity: 0
   transform: translate(0, -10px)
   transition: all .25s ease
@@ -61,13 +61,13 @@
   &:after
     opacity: 0 !important
     box-shadow: 0px 0px 0px 0px rgba(0,0,0, -var(shadow-opacity))
-.vs-select-content
+.vso-select-content
   width: 100%
   max-width: 200px
   &.block
     &.block
       max-width: 100%
-.vs-select
+.vso-select
   position: relative
   display: flex
   align-items: center
@@ -88,13 +88,13 @@
 
   &.loading
     pointer-events: none
-    *:not(.vs-select__loading):not(.vs-select__label)
+    *:not(.vso-select__loading):not(.vso-select__label)
       opacity: .6
-    .vs-select__label
+    .vso-select__label
       pointer-events: none !important
   &.top
     &.activeOptions
-      .vs-select__input, .vs-select__chips
+      .vso-select__input, .vso-select__chips
         border-radius: 0px 0px 12px 12px !important
         box-shadow: 0px -5px 25px -4px rgba(0,0,0, -var(shadow-opacity)) !important
   &--disabled
@@ -102,7 +102,7 @@
     pointer-events: none
     label
       pointer-events: none
-  .vs-icon-arrow
+  .vso-icon-arrow
     z-index: 600
     position: absolute
     right: 15px
@@ -112,10 +112,10 @@
     cursor: pointer
 
   &.activeOptions
-    .vs-icon-arrow
+    .vso-icon-arrow
       transform: rotate(45deg)
       margin-top: -2px !important
-    .vs-select__input
+    .vso-select__input
       border-radius: 12px 12px 0px 0px
       background: -color('background')
       box-shadow: 0px 5px 25px -4px rgba(0,0,0, -var(shadow-opacity))
@@ -123,7 +123,7 @@
       transition: all .25s ease, height 0s
       // border: 2px solid transparent !important
       color: -color('text',1)
-    .vs-select__chips
+    .vso-select__chips
       border-radius: 12px 12px 0px 0px
       background: -color('background')
       box-shadow: 0px 5px 25px -4px rgba(0,0,0, -var(shadow-opacity))
@@ -131,14 +131,14 @@
       transition: all .25s ease, height 0s
       &:after
         opacity: 0
-    .vs-select__label--placeholder
+    .vso-select__label--placeholder
       opacity: 1
       visibility: visible
       pointer-events: auto
       transform: translate(-3%, -28px) !important
       font-size: .75rem
       margin-top: 0px !important
-    .vs-select__label
+    .vso-select__label
       margin-top: -4px
   &__input
     opacity: 1
@@ -165,7 +165,7 @@
       box-shadow: 0px 5px 25px -4px rgba(0,0,0, -var(shadow-opacity))
       transform: translate(0, -4px)
       transition: all .25s ease
-      ~ .vs-select__label--placeholder
+      ~ .vso-select__label--placeholder
         opacity: 1
         visibility: visible
         pointer-events: auto
@@ -176,9 +176,9 @@
       background: -color('background')
       box-shadow: 0px 5px 25px -4px rgba(0,0,0, -var(shadow-opacity))
       transform: translate(0, -4px)
-      ~ .vs-select__label
+      ~ .vso-select__label
         margin-top: -4px
-      ~ .vs-icon-arrow
+      ~ .vso-icon-arrow
         margin-top: -6px
 
 
@@ -211,7 +211,7 @@
       box-shadow: 0px 5px 25px -4px rgba(0,0,0, -var(shadow-opacity))
       transform: translate(0, -4px)
       transition: all .25s ease
-      ~ .vs-icon-arrow
+      ~ .vso-icon-arrow
         margin-top: -6px
         transition: all .25s ease
     &__input
@@ -259,20 +259,20 @@
         transition: all .25s ease
         &:hover
           background: -color('danger')
-          .vs-icon-close
-            --vs-color: var(--vs-background)
+          .vso-icon-close
+            --vso-color: var(--vso-background)
             &:after
               width: 12px
               transform: rotate(180deg)
             &:before
               width: 12px
               transform: rotate(180deg)
-        .vs-icon-close
-          --vs-color: var(--vs-text)
+        .vso-icon-close
+          --vso-color: var(--vso-text)
           transform: scale(.5)
 
   &__options
-    --vs-color: var(--vs-primary)
+    --vso-color: var(--vso-primary)
     position: absolute
     z-index: 99999
     background: -color('background')
@@ -341,7 +341,7 @@
     &--hidden
       opacity: 0
       visibility: hidden
-      &.vs-select__label--placeholder
+      &.vso-select__label--placeholder
         opacity: 1
         visibility: visible
         pointer-events: auto
@@ -394,7 +394,7 @@
       animation: rotateInputLoading .8s linear infinite
       opacity: .2
       content: ''
-    & ~ .vs-icon-arrow
+    & ~ .vso-icon-arrow
       opacity: 0 !important
 
   &__message
@@ -414,11 +414,11 @@
     &--primary
       color: -color('primary',1)
 
-.vs-darken
-  .vs-select__options
+.vso-darken
+  .vso-select__options
     &.isColorDark
-      --vs-color: 0, 0, 0 !important
-      .vs-select__option
+      --vso-color: 0, 0, 0 !important
+      .vso-select__option
         &:hover
           background: -color('color',.2)
           color: -color('text')

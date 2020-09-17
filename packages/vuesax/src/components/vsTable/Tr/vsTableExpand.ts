@@ -24,20 +24,20 @@ export default class VsTableTr extends VsComponent {
 
   public render(h: any): VNode {
     const subContent = h('div', {
-      staticClass: 'vs-table__expand__td__content__sub',
+      staticClass: 'vso-table__expand__td__content__sub',
     }, [
       this.$slots.default
     ])
 
     const content = h('div', {
-      staticClass: 'vs-table__expand__td__content',
+      staticClass: 'vso-table__expand__td__content',
       ref: 'content'
     }, [
       subContent
     ])
 
     const td = h('td', {
-      staticClass: 'vs-table__expand__td',
+      staticClass: 'vso-table__expand__td',
       attrs: {
         colspan: this.colspan
       }
@@ -46,7 +46,7 @@ export default class VsTableTr extends VsComponent {
     ])
 
     const expand = h('tr', {
-      staticClass: 'vs-table__tr__expand'
+      staticClass: 'vso-table__tr__expand'
     }, [
       td
     ])

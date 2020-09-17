@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsAlert'
 
 component.install = (vue: any) => {
-  vue.component('vs-alert', component)
+  vue.component('vso-alert', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

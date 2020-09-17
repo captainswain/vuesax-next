@@ -91,14 +91,14 @@ export default class VsPagination extends VsComponent {
   renderDotted(text: string = '...') {
     const h = this.$createElement
     const dotted = h('div', {
-      staticClass: 'vs-pagination__dotted',
+      staticClass: 'vso-pagination__dotted',
       class: {
         next: this.value == this.length ? false : text == '...>'
       },
       on: {
         click: (evt: any) => {
           let newVal = (this.value == this.length ? false : text == '...>') ?
-          this.val += this.dottedNumber : this.val -= this.dottedNumber
+            this.val += this.dottedNumber : this.val -= this.dottedNumber
           if (newVal > this.length) {
             newVal = this.length
           } else if (newVal < 1) {
@@ -134,7 +134,7 @@ export default class VsPagination extends VsComponent {
     const h = this.$createElement
     const button = h('button', {
       ref: `btn${NumberPage}`,
-      staticClass: 'vs-pagination__button',
+      staticClass: 'vso-pagination__button',
       class: {
         active: NumberPage == this.value,
         prevActive: NumberPage == this.value - 1,
@@ -190,7 +190,7 @@ export default class VsPagination extends VsComponent {
     const max = this.isMobile ? 5 : this.max
     const even = max % 2 === 0 ? 1 : 0
     const prevRange = Math.floor(max / 2)
-    const nextRange  = length - prevRange + 1 + even
+    const nextRange = length - prevRange + 1 + even
 
     if (this.value >= prevRange && this.value <= nextRange && !this.buttonsDotted) {
       const start = this.value - prevRange + 2
@@ -205,7 +205,7 @@ export default class VsPagination extends VsComponent {
       ])
     } else if (this.buttonsDotted || this.length <= 6) {
       return this.renderButtons([
-        ...this.getButtons(1, this.length  == 0 ? 1 : this.length ),
+        ...this.getButtons(1, this.length == 0 ? 1 : this.length),
       ])
     }
 
@@ -227,7 +227,7 @@ export default class VsPagination extends VsComponent {
 
   public render(h: any): VNode {
     const active = h('div', {
-      staticClass: 'vs-pagination__active',
+      staticClass: 'vso-pagination__active',
       style: {
         left: `${this.leftActive}px`,
       },
@@ -237,14 +237,14 @@ export default class VsPagination extends VsComponent {
     }, this.buttonsDotted ? '' : this.value)
 
     const pagination = h('div', {
-      staticClass: 'vs-pagination',
+      staticClass: 'vso-pagination',
       ref: 'pagination'
     }, [
       this.getPages
     ])
 
     const prev = h('button', {
-      staticClass: 'vs-pagination__arrow',
+      staticClass: 'vso-pagination__arrow',
       attrs: {
         disabled: this.infinite ? false : this.val <= 1
       },
@@ -266,7 +266,7 @@ export default class VsPagination extends VsComponent {
     ])
 
     const next = h('button', {
-      staticClass: 'vs-pagination__arrow',
+      staticClass: 'vso-pagination__arrow',
       attrs: {
         disabled: this.infinite ? false : this.val >= this.length
       },
@@ -288,13 +288,13 @@ export default class VsPagination extends VsComponent {
     ])
 
     const slot = h('div', {
-      staticClass: 'vs-pagination__slot',
+      staticClass: 'vso-pagination__slot',
     }, [
       this.$slots.default
     ])
 
     const progress = h('div', {
-      staticClass: 'vs-pagination__progress'
+      staticClass: 'vso-pagination__progress'
     }, [
       h('div', {
         staticClass: 'progress',
@@ -305,7 +305,7 @@ export default class VsPagination extends VsComponent {
     ])
 
     return h('div', {
-      staticClass: 'vs-pagination-content',
+      staticClass: 'vso-pagination-content',
       class: [
         {
           buttonsDotted: this.buttonsDotted,

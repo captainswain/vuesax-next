@@ -77,13 +77,13 @@ export default class VsDialog extends VsComponent {
 
   public render(h: any): VNode {
     const header = h('header', {
-      staticClass: 'vs-dialog__header'
+      staticClass: 'vso-dialog__header'
     }, [
       this.$slots.header
     ])
 
     const content = h('div', {
-      staticClass: 'vs-dialog__content',
+      staticClass: 'vso-dialog__content',
       class: {
         notFooter: !this.$slots.footer
       }
@@ -92,13 +92,13 @@ export default class VsDialog extends VsComponent {
     ])
 
     const footer = h('footer', {
-      staticClass: 'vs-dialog__footer'
+      staticClass: 'vso-dialog__footer'
     }, [
       this.$slots.footer
     ])
 
     const close = h('button', {
-      staticClass: 'vs-dialog__close',
+      staticClass: 'vso-dialog__close',
       on: {
         click: (evt: any) => {
           this.$emit('input', !this.value)
@@ -113,27 +113,27 @@ export default class VsDialog extends VsComponent {
     ])
 
     const loading = h('div', {
-      staticClass: 'vs-dialog__loading',
+      staticClass: 'vso-dialog__loading',
     }, [
       h('div', {
-        staticClass: 'vs-dialog__loading__load',
+        staticClass: 'vso-dialog__loading__load',
       })
     ])
 
     const dialog = h('div', {
-      staticClass: 'vs-dialog',
+      staticClass: 'vso-dialog',
       style: {
         width: this.width
       },
       class: {
-        'vs-dialog--fullScreen': this.fullScreen,
-        'vs-dialog--rebound': this.rebound,
-        'vs-dialog--notPadding': this.notPadding,
-        'vs-dialog--square': this.square,
-        'vs-dialog--autoWidth': this.autoWidth,
-        'vs-dialog--scroll': this.scroll,
-        'vs-dialog--loading': this.loading,
-        'vs-dialog--notCenter': this.notCenter,
+        'vso-dialog--fullScreen': this.fullScreen,
+        'vso-dialog--rebound': this.rebound,
+        'vso-dialog--notPadding': this.notPadding,
+        'vso-dialog--square': this.square,
+        'vso-dialog--autoWidth': this.autoWidth,
+        'vso-dialog--scroll': this.scroll,
+        'vso-dialog--loading': this.loading,
+        'vso-dialog--notCenter': this.notCenter,
       }
     }, [
       this.loading && loading,
@@ -144,7 +144,7 @@ export default class VsDialog extends VsComponent {
     ])
 
     const dialogContent = h('div', {
-      staticClass: 'vs-dialog-content',
+      staticClass: 'vso-dialog-content',
       ref: 'dialog-content',
       class: {
         blur: this.blur,
@@ -152,11 +152,11 @@ export default class VsDialog extends VsComponent {
       },
       on: {
         click: (evt: any) => {
-          if (!evt.target.closest('.vs-dialog') && !this.preventClose) {
+          if (!evt.target.closest('.vso-dialog') && !this.preventClose) {
             this.$emit('input', !this.value)
           }
 
-          if (this.preventClose && !evt.target.closest('.vs-dialog')) {
+          if (this.preventClose && !evt.target.closest('.vso-dialog')) {
             this.rebound = true
             setTimeout(() => {
               this.rebound = false
@@ -170,7 +170,7 @@ export default class VsDialog extends VsComponent {
 
     return h('transition', {
       props: {
-        name: 'vs-dialog'
+        name: 'vso-dialog'
       },
     }, [this.value && dialogContent])
   }

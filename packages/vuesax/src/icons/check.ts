@@ -7,7 +7,7 @@ export default class VsIconClose extends Vue {
 
   render(h: any): VNode {
     const icon = h('i', {
-      staticClass: 'vs-icon-check',
+      staticClass: 'vso-icon-check',
       on: {
         ...this.$listeners
       },
@@ -17,7 +17,7 @@ export default class VsIconClose extends Vue {
         }
       ]
     }, [
-      h('span', {} , [
+      h('span', {}, [
         h('div', {
           staticClass: 'line1'
         }),

@@ -2,7 +2,7 @@
 @import '../../../styles/colors'
 @import 'root'
 
-.vs-avatar-content
+.vso-avatar-content
   border-radius: 35%
   z-index: 1
   width: 44px
@@ -10,16 +10,16 @@
   position: relative
   transition: all .25s ease
   user-select: none
-  &.vs-change-color-badge
-    .vs-avatar__badge
-      .vs-avatar__points__point
+  &.vso-change-color-badge
+    .vso-avatar__badge
+      .vso-avatar__points__point
         background: -color('background')
-  &.vs-change-color
+  &.vso-change-color
     &:hover
-      .vs-avatar
+      .vso-avatar
         box-shadow: inset 0px 0px 40px 0px rgba(0,0,0,.1)
   &:hover
-    .vs-avatar
+    .vso-avatar
       box-shadow: inset 0px 0px 40px 0px rgba(0,0,0,.04)
     img
       transform: scale(1.1)
@@ -29,7 +29,7 @@
     display: none
   &--circle
     border-radius: 50% !important
-    .vs-avatar__badge
+    .vso-avatar__badge
       right: -2px
       bottom: -2px
       &.top-right
@@ -49,7 +49,7 @@
     &--gradient
       &:after
         background-image: linear-gradient(40deg, #f99b4a 0%, #df376b 74%, #c52d91 74%) !important
-    .vs-avatar
+    .vso-avatar
       width: calc(100% - 4px)
       height: calc(100% - 4px)
       border: 2px solid -color('background')
@@ -65,13 +65,13 @@
       background-color: #FFE53B
       z-index: -1
       background: -color('color')
-  &.vs-change-color
-    .vs-avatar
+  &.vso-change-color
+    .vso-avatar
       color: -color('background')
-    .vs-avatar__points
-      .vs-avatar__points__point
+    .vso-avatar__points
+      .vso-avatar__points__point
         background: -color('background')
-.vs-avatar
+.vso-avatar
   background: -color('color')
   color: #fff
   overflow: hidden

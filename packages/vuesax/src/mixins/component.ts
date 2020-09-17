@@ -30,10 +30,10 @@ export default class VsComponent extends Vue {
   changeColor() {
     if (!this.$el || this.$el.nodeName == '#comment') { return }
     this.componentColor = (this.danger && 'danger') ||
-    (this.success && 'success') ||
-    (this.warn && 'warn') ||
-    (this.dark && 'dark') ||
-    (this.primary && 'primary')
+      (this.success && 'success') ||
+      (this.warn && 'warn') ||
+      (this.dark && 'dark') ||
+      (this.primary && 'primary')
     if (this.color || this.componentColor) {
       setColor('color', this.componentColor || this.color || 'primary', this.$el, true)
 
@@ -46,15 +46,15 @@ export default class VsComponent extends Vue {
       }
     }
     if (this.componentColor == 'dark' || this.color == 'dark') {
-      this.$el.classList.add('vs-component-dark')
+      this.$el.classList.add('vso-component-dark')
     } else {
-      this.$el.classList.remove('vs-component-dark')
+      this.$el.classList.remove('vso-component-dark')
     }
 
     if (this.componentColor == 'white') {
-      this.$el.classList.add('vs-component-white')
+      this.$el.classList.add('vso-component-white')
     } else {
-      this.$el.classList.remove('vs-component-white')
+      this.$el.classList.remove('vso-component-white')
     }
   }
 

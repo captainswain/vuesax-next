@@ -51,11 +51,11 @@ export default class VsCheckbox extends VsComponent {
       } else if (typeof this.value == 'object' && this.value !== null) {
         const array = this.value
         const containValue = array.indexOf(this.val) === -1 &&
-        JSON.stringify(array).indexOf(JSON.stringify(this.val)) === -1
+          JSON.stringify(array).indexOf(JSON.stringify(this.val)) === -1
         let indexVal = 0
 
         array.forEach((item: any, index: number) => {
-          if(JSON.stringify(item) == JSON.stringify(this.val)) {
+          if (JSON.stringify(item) == JSON.stringify(this.val)) {
             indexVal = index
           }
         })
@@ -75,7 +75,7 @@ export default class VsCheckbox extends VsComponent {
 
   public render(h: any): VNode {
     const InputCheckbox = h('input', {
-      staticClass: 'vs-checkbox',
+      staticClass: 'vso-checkbox',
       attrs: {
         ...this.$attrs,
         type: 'checkbox',
@@ -89,17 +89,17 @@ export default class VsCheckbox extends VsComponent {
         input: (evt: any) => {
           if (typeof this.value == 'boolean') {
 
-              this.$emit('input', !this.value)
+            this.$emit('input', !this.value)
 
           } else if (typeof this.value == 'object' && this.value !== null) {
 
             const array = this.value
             const containValue = array.indexOf(this.val) === -1 &&
-            JSON.stringify(array).indexOf(JSON.stringify(this.val)) === -1
+              JSON.stringify(array).indexOf(JSON.stringify(this.val)) === -1
             let indexVal = 0
 
             array.forEach((item: any, index: number) => {
-              if(JSON.stringify(item) == JSON.stringify(this.val)) {
+              if (JSON.stringify(item) == JSON.stringify(this.val)) {
                 indexVal = index
               }
             })
@@ -129,7 +129,7 @@ export default class VsCheckbox extends VsComponent {
     })
 
     const checkbox = h('div', {
-      staticClass: 'vs-checkbox-mask',
+      staticClass: 'vso-checkbox-mask',
     }, [
       !this.$slots.icon && h(VsIconsCheck, {
         props: {
@@ -140,7 +140,7 @@ export default class VsCheckbox extends VsComponent {
     ])
 
     const label = h('label', {
-      staticClass: 'vs-checkbox-label',
+      staticClass: 'vso-checkbox-label',
       class: [
         {
           lineThrough: this.lineThrough
@@ -154,25 +154,25 @@ export default class VsCheckbox extends VsComponent {
     ])
 
     const conCheckbox = h('div', {
-      staticClass: 'vs-checkbox-con'
+      staticClass: 'vso-checkbox-con'
     }, [
       InputCheckbox,
       checkbox
     ])
 
     return h('div', {
-      staticClass: 'vs-checkbox-content',
+      staticClass: 'vso-checkbox-content',
       class: [
-        { 'vs-checkbox--checked': this.isChecked },
-        { 'vs-checkbox--disabled': this.$attrs.hasOwnProperty('disabled') },
-        { 'vs-checkbox--loading': this.loading },
-        { 'vs-checkbox--label-before': this.labelBefore },
+        { 'vso-checkbox--checked': this.isChecked },
+        { 'vso-checkbox--disabled': this.$attrs.hasOwnProperty('disabled') },
+        { 'vso-checkbox--loading': this.loading },
+        { 'vso-checkbox--label-before': this.labelBefore },
       ]
     },
-     [
-      conCheckbox,
-      this.$slots.default && label
-     ]
+      [
+        conCheckbox,
+        this.$slots.default && label
+      ]
     )
   }
 }

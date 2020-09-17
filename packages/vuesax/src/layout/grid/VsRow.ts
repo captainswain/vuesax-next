@@ -20,13 +20,13 @@ export default class VsRow extends Vue {
   public render(h: any): VNode {
 
     const vsRow = h('div', {
-      staticClass: 'vs-row',
+      staticClass: 'vso-row',
       style: {
         justifyContent: this.justify,
         alignItems: this.align,
         flexDirection: this.direction
       },
-    }, this.$slots.default )
+    }, this.$slots.default)
 
     return vsRow
   }

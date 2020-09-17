@@ -15,7 +15,7 @@ const writeToFile = (contents, file) => {
 
 function FileSass(name, sub, isSub) {
   return `@import '../../../styles/mixins'
-.vs-${name.toLowerCase()}${isSub ? '__' : '-' }${sub.toLowerCase()}
+.vso-${name.toLowerCase()}${isSub ? '__' : '-'}${sub.toLowerCase()}
   background: #000
   `.trim()
 }
@@ -25,7 +25,7 @@ function FileIndexTs(name, sub) {
 import component from './Vs${name}${sub}'
 
 component.install = (vue: any) => {
-  vue.component('vs-${name.toLowerCase()}-${sub.toLowerCase()}', component)
+  vue.component('vso-${name.toLowerCase()}-${sub.toLowerCase()}', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -43,24 +43,24 @@ import { Component } from 'vue-property-decorator'
 ${isSub ? `import VsComponent from '../../../mixins/component'` : `import Vs${name} from '../Base'`}
 
 @Component
-export default class Vs${name}${sub} extends ${ isSub ? 'VsComponent' : `Vs${name}` } {
+export default class Vs${name}${sub} extends ${isSub ? 'VsComponent' : `Vs${name}`} {
   public render(h: any): VNode {
     return h('button', {
-      staticClass: 'vs-${name.toLowerCase()}${isSub ? '__' : '-' }${sub.toLowerCase()}',
+      staticClass: 'vso-${name.toLowerCase()}${isSub ? '__' : '-'}${sub.toLowerCase()}',
     }, this.$slots.default)
   }
 }`.trim()
 }
 
 function addComponentJson(name, sub, isSub) {
-  sed('-i', '"newComponent": ""', `"vs${name}${sub}": "./src/components/vs${name}/${ isSub ? '' : '_' }${sub}/index.ts",\n  "newComponent": ""`, './build/components/components.json');
+  sed('-i', '"newComponent": ""', `"vs${name}${sub}": "./src/components/vs${name}/${isSub ? '' : '_'}${sub}/index.ts",\n  "newComponent": ""`, './build/components/components.json');
 }
 
 function addComponentExport(name, sub) {
   sed('-i', '// new component slot', `export { default as vs${name}${sub} } from './vs${name}/${sub}'\n// new component slot`, './src/components/index.ts');
 }
 
-console.log(boxen('New Component Options', {padding: 1, margin: 2 , borderColor: 'yellow', borderStyle: 'round'}));
+console.log(boxen('New Component Options', { padding: 1, margin: 2, borderColor: 'yellow', borderStyle: 'round' }));
 
 let options = {}
 
@@ -70,7 +70,7 @@ inquirer.prompt([{
   message: 'Cual es el nombre del componente base ?',
   filter: String,
   validate: (value) => {
-    if(test('-e', `src/components/vs${value}`)) {
+    if (test('-e', `src/components/vs${value}`)) {
       options.component = value
       return true
     } else {
@@ -95,9 +95,9 @@ inquirer.prompt([{
     message: 'Cual es el nombre del sub componente ?',
     filter: String,
     validate: (value) => {
-      if(test('-e', `src/components/vs${answers.name}/${value}`)) {
+      if (test('-e', `src/components/vs${answers.name}/${value}`)) {
         return 'This sub component already exists';
-      } else if(!/^[A-Z]/.test(value)) {
+      } else if (!/^[A-Z]/.test(value)) {
         return 'This sub component name not Capitalize';
       } else {
         options.sub = value
@@ -116,8 +116,8 @@ inquirer.prompt([{
     }
 
     addComponentJson(component, sub, isSub)
-    mkdir('-p', `src/components/vs${component}/${ isSub ? '' : '_' }${sub}`)
-    cd(`src/components/vs${component}/${ isSub ? '' : '_' }${sub}`)
+    mkdir('-p', `src/components/vs${component}/${isSub ? '' : '_'}${sub}`)
+    cd(`src/components/vs${component}/${isSub ? '' : '_'}${sub}`)
     writeToFile(FileSass(component, sub, isSub), `style.sass`)
     writeToFile(FileIndexTs(component, sub), `index.ts`)
     writeToFile(FileComponentTs(component, sub, isSub), `vs${component}${sub}.ts`)

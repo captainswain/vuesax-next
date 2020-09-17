@@ -122,7 +122,7 @@ export default class VsNotification extends Vue {
 
   public render(h: any): VNode {
     const title = h('header', {
-      staticClass: 'vs-notification__content__header'
+      staticClass: 'vso-notification__content__header'
     }, [
       h('h4', {
         domProps: {
@@ -132,7 +132,7 @@ export default class VsNotification extends Vue {
     ])
 
     const text = h('div', {
-      staticClass: 'vs-notification__content__text'
+      staticClass: 'vso-notification__content__text'
     }, [
       h('p', {
         domProps: {
@@ -142,7 +142,7 @@ export default class VsNotification extends Vue {
     ])
 
     const content = h('div', {
-      staticClass: 'vs-notification__content'
+      staticClass: 'vso-notification__content'
     }, [
       this.title && title,
       this.text && text,
@@ -150,14 +150,14 @@ export default class VsNotification extends Vue {
     ])
 
     const icon = h('div', {
-      staticClass: 'vs-notification__icon',
+      staticClass: 'vso-notification__icon',
       domProps: {
         innerHTML: this.icon
       },
     })
 
     const closeBtn = h('button', {
-      staticClass: 'vs-notification__close',
+      staticClass: 'vso-notification__close',
       on: {
         click: this.handleClickClose
       }
@@ -170,11 +170,11 @@ export default class VsNotification extends Vue {
     ])
 
     const loading = h('div', {
-      staticClass: 'vs-notification__loading',
+      staticClass: 'vso-notification__loading',
     })
 
     const progress = h('div', {
-      staticClass: 'vs-notification__progress',
+      staticClass: 'vso-notification__progress',
       style: {
         width: `${this.progress}%`
       }
@@ -191,40 +191,40 @@ export default class VsNotification extends Vue {
       },
     }, [
       this.isVisible && h('div', {
-          staticClass: 'vs-notification',
-          class: [
-            { 'vs-notification--color': this.color },
-            { 'vs-notification--border': this.border },
-            { 'vs-notification--icon': this.icon },
-            { 'vs-notification--onClick': this.onClick },
-            { 'vs-notification--flat': this.flat },
-            { 'vs-notification--sticky': this.sticky },
-            { 'vs-notification--square': this.square },
-            { 'vs-notification--width-all': this.width == '100%' },
-            { 'vs-notification--width-auto': this.width == 'auto' },
-            { 'vs-notification--loading': this.loading },
-            { 'vs-notification--notPadding': this.notPadding },
-            `vs-notification--${this.colorName}`,
-            this.classNotification
-          ],
-          on: {
-            click: () => {
-              if (this.onClick) {
-                this.onClick()
-              }
-              if (this.clickClose) {
-                this.close()
-              }
+        staticClass: 'vso-notification',
+        class: [
+          { 'vso-notification--color': this.color },
+          { 'vso-notification--border': this.border },
+          { 'vso-notification--icon': this.icon },
+          { 'vso-notification--onClick': this.onClick },
+          { 'vso-notification--flat': this.flat },
+          { 'vso-notification--sticky': this.sticky },
+          { 'vso-notification--square': this.square },
+          { 'vso-notification--width-all': this.width == '100%' },
+          { 'vso-notification--width-auto': this.width == 'auto' },
+          { 'vso-notification--loading': this.loading },
+          { 'vso-notification--notPadding': this.notPadding },
+          `vso-notification--${this.colorName}`,
+          this.classNotification
+        ],
+        on: {
+          click: () => {
+            if (this.onClick) {
+              this.onClick()
+            }
+            if (this.clickClose) {
+              this.close()
             }
           }
-        }, [
-          (!this.loading && this.icon) && icon,
-          !this.loading && content,
-          this.buttonClose && closeBtn,
-          this.loading && loading,
-          progress
-        ])
-      ]
+        }
+      }, [
+        (!this.loading && this.icon) && icon,
+        !this.loading && content,
+        this.buttonClose && closeBtn,
+        this.loading && loading,
+        progress
+      ])
+    ]
     )
   }
 }

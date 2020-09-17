@@ -11,8 +11,8 @@ export default class VsButton extends VsComponent {
   public render(h: any): VNode {
 
     const btnGroup = h('div', {
-      staticClass: 'vs-button-group'
-    }, this.$slots.default )
+      staticClass: 'vso-button-group'
+    }, this.$slots.default)
 
     return btnGroup
   }

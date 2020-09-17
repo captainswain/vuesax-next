@@ -2,7 +2,7 @@ import './style.sass'
 import component from './vsOptionGroup'
 
 component.install = (vue: any) => {
-  vue.component('vs-option-group', component)
+  vue.component('vso-option-group', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

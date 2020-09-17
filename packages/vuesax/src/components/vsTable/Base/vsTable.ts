@@ -41,26 +41,26 @@ export default class VsTable extends VsComponent {
 
   public render(h: any): VNode {
     const footer = h('footer', {
-      staticClass: 'vs-table__footer'
+      staticClass: 'vso-table__footer'
     }, [
       this.$slots.footer
     ])
 
     const header = h('header', {
-      staticClass: 'vs-table__header'
+      staticClass: 'vso-table__header'
     }, [
       this.$slots.header
     ])
 
     const thead = h('thead', {
       ref: 'thead',
-      staticClass: 'vs-table__thead'
+      staticClass: 'vso-table__thead'
     }, [
       this.$slots.thead
     ])
 
     const notFound = h('tbody', {
-      staticClass: 'vs-table_not-found'
+      staticClass: 'vso-table_not-found'
     }, [
       h('tr', [
         h('td', {
@@ -68,19 +68,19 @@ export default class VsTable extends VsComponent {
             colspan: this.colspan
           }
         }, [
-           this.$slots.notFound || 'No matching records found'
+          this.$slots.notFound || 'No matching records found'
         ])
       ])
     ])
 
     const tbody = h('tbody', {
-      staticClass: 'vs-table__tbody'
+      staticClass: 'vso-table__tbody'
     }, [
       this.$slots.tbody,
     ])
 
     const table = h('div', {
-      staticClass: 'vs-table',
+      staticClass: 'vso-table',
       class: {
         isSelectedValue: this.value,
         striped: this.striped,
@@ -95,7 +95,7 @@ export default class VsTable extends VsComponent {
     ])
 
     return h('div', {
-      staticClass: 'vs-table-content',
+      staticClass: 'vso-table-content',
     }, [
       this.$slots.header && header,
       table,

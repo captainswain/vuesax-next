@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsPagination'
 
 component.install = (vue: any) => {
-  vue.component('vs-pagination', component)
+  vue.component('vso-pagination', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

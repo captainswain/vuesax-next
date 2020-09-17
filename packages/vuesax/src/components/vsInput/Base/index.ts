@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsInput'
 
 component.install = (vue: any) => {
-  vue.component('vs-input', component)
+  vue.component('vso-input', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

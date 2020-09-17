@@ -8,10 +8,10 @@
   opacity: 0
 
 
-.vs-loading
-  --vs-color: var(--vs-primary)
-  --vs-background: 255,255,255
-  --vs-opacity: .6
+.vso-loading
+  --vso-color: var(--vso-primary)
+  --vso-background: 255,255,255
+  --vso-opacity: .6
   position: fixed
   top: 0px
   left: 0px
@@ -52,7 +52,7 @@
       align-items: center
       justify-content: center
 
-.vs-loading__progress
+.vso-loading__progress
   width: 100%
   position: absolute
   top: 0px
@@ -66,8 +66,8 @@
     border-radius: 0px 10px 10px 0px
 
 
-.vs-loading--default
-  .vs-loading__load__animation
+.vso-loading--default
+  .vso-loading__load__animation
     border-radius: 50%
     &__1
       position: absolute
@@ -101,8 +101,8 @@
   100%
     transform: rotate(360deg)
 
-.vs-loading--waves
-  .vs-loading__load__animation
+.vso-loading--waves
+  .vso-loading__load__animation
     display: flex
     align-items: center
     justify-content: center
@@ -140,8 +140,8 @@
     width: 50px
     opacity: 0
 
-.vs-loading--corners
-  .vs-loading__load__animation
+.vso-loading--corners
+  .vso-loading__load__animation
     display: flex
     align-items: center
     justify-content: center
@@ -174,8 +174,8 @@
     border-radius: 50%
     transform: rotate(-180deg)
 
-.vs-loading--border
-  .vs-loading__load__animation
+.vso-loading--border
+  .vso-loading__load__animation
     display: flex
     align-items: center
     justify-content: center
@@ -212,11 +212,11 @@
       animation: rotate 1s linear infinite .4s
       opacity: .2
 
-.vs-loading--points
-  .vs-loading__load__percent
+.vso-loading--points
+  .vso-loading__load__percent
     position: absolute
     top: -10px
-  .vs-loading__load__animation
+  .vso-loading__load__animation
     display: flex
     align-items: flex-end
     justify-content: center
@@ -252,8 +252,8 @@
   100%
     transform: translate(0px, 0px)
 
-.vs-loading--square
-  .vs-loading__load__animation
+.vso-loading--square
+  .vso-loading__load__animation
     display: flex
     align-items: center
     justify-content: center
@@ -285,8 +285,8 @@
   100%
     transform: rotate(0deg)
 
-.vs-loading--gradient
-  .vs-loading__load__animation
+.vso-loading--gradient
+  .vso-loading__load__animation
     display: flex
     align-items: center
     justify-content: center
@@ -314,11 +314,11 @@
     &__3
       display: none
 
-.vs-loading--rectangle
-  .vs-loading__load__percent
+.vso-loading--rectangle
+  .vso-loading__load__percent
     position: absolute
     bottom: -2px
-  .vs-loading__load__animation
+  .vso-loading__load__animation
     display: flex
     align-items: flex-end
     justify-content: center
@@ -349,8 +349,8 @@
   100%
     transform: translate(-50px)
 
-.vs-loading--circles
-  .vs-loading__load__animation
+.vso-loading--circles
+  .vso-loading__load__animation
     display: flex
     align-items: center
     justify-content: center
@@ -387,11 +387,11 @@
       border-left: 3px solid transparent
       border-right: 3px solid transparent
 
-.vs-loading--square-rotate
-  .vs-loading__load__percent
+.vso-loading--square-rotate
+  .vso-loading__load__percent
     position: absolute
     bottom: 30px
-  .vs-loading__load__animation
+  .vso-loading__load__animation
     display: flex
     align-items: flex-end
     justify-content: center
@@ -420,11 +420,11 @@
   100%
     transform: rotateX(0deg) rotateY(0deg)
 
-.vs-loading--scale
-  .vs-loading__load__percent
+.vso-loading--scale
+  .vso-loading__load__percent
     position: absolute
     bottom: 40px
-  .vs-loading__load__animation
+  .vso-loading__load__animation
     display: flex
     align-items: cneter
     justify-content: center

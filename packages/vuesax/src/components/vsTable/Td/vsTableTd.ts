@@ -8,7 +8,7 @@ export default class VsTableTd extends VsComponent {
   @Prop({ type: Boolean }) edit: boolean
   public render(h: any): VNode {
     return h('td', {
-      staticClass: 'vs-table__td',
+      staticClass: 'vso-table__td',
       on: {
         click: (evt: any) => {
           this.$emit('click', evt)

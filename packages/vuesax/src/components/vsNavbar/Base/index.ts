@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsNavbar'
 
 component.install = (vue: any) => {
-  vue.component('vs-navbar', component)
+  vue.component('vso-navbar', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

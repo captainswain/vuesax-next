@@ -29,7 +29,7 @@ export default class VsLoading extends Vue {
     this.$nextTick(() => {
       setColor('color', this.color, this.$el)
       setColor('background', this.background, this.$el)
-      if(this.opacity) {
+      if (this.opacity) {
         setVar('opacity', this.opacity, this.$el)
       }
     })
@@ -37,30 +37,30 @@ export default class VsLoading extends Vue {
 
   public render(h: any): VNode {
     const animation = h('div', {
-      class: ['vs-loading__load__animation'],
+      class: ['vso-loading__load__animation'],
     }, [
       h('div', {
-        staticClass: 'vs-loading__load__percent'
+        staticClass: 'vso-loading__load__percent'
       }, [
         this.percent
       ]),
       h('div', {
-        staticClass: 'vs-loading__load__animation__1'
+        staticClass: 'vso-loading__load__animation__1'
       }),
       h('div', {
-        staticClass: 'vs-loading__load__animation__2'
+        staticClass: 'vso-loading__load__animation__2'
       }),
       h('div', {
-        staticClass: 'vs-loading__load__animation__3'
+        staticClass: 'vso-loading__load__animation__3'
       })
     ])
 
     const text = h('div', {
-      class: ['vs-loading__load__text'],
+      class: ['vso-loading__load__text'],
     }, this.text)
 
     const loading = h('div', {
-      class: ['vs-loading__load'],
+      class: ['vso-loading__load'],
       style: {
         transform: `scale(${this.scale})`
       },
@@ -70,10 +70,10 @@ export default class VsLoading extends Vue {
     ])
 
     const progress = h('div', {
-      class: ['vs-loading__progress'],
+      class: ['vso-loading__progress'],
     }, [
       h('div', {
-        staticClass: 'vs-loading__progress__bar',
+        staticClass: 'vso-loading__progress__bar',
         style: {
           width: `${this.progress}%`
         }
@@ -86,17 +86,17 @@ export default class VsLoading extends Vue {
       }
     }, [
       this.isVisible && h('div', {
-          staticClass: 'vs-loading',
-          class: [
-            `vs-loading--${this.type || 'default'}`,
-            { 'vs-loading--target': !!this.target },
-            { 'vs-loading--background': !!this.background }
-          ],
-        }, [
-          loading,
-          this.progress && progress
-        ])
-      ]
+        staticClass: 'vso-loading',
+        class: [
+          `vso-loading--${this.type || 'default'}`,
+          { 'vso-loading--target': !!this.target },
+          { 'vso-loading--background': !!this.background }
+        ],
+      }, [
+        loading,
+        this.progress && progress
+      ])
+    ]
     )
   }
 }

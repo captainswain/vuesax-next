@@ -2,7 +2,7 @@ import './style.sass'
 import component from './VsCheckbox'
 
 component.install = (vue: any) => {
-  vue.component('vs-checkbox', component)
+  vue.component('vso-checkbox', component)
 }
 
 if (typeof window !== 'undefined' && window.Vue) {

@@ -2,7 +2,7 @@
 @import '../../../styles/colors'
 @import 'root'
 
-.vs-button
+.vso-button
   border: 0px
   margin: -var(button-margin)
   border-radius: -var(button-border-radius)
@@ -18,8 +18,8 @@
   outline: none
   font-size: .8rem
   box-sizing: border-box
-  &.vs-component-dark
-    &.vs-button--transparent
+  &.vso-component-dark
+    &.vso-button--transparent
       color: -color('text') !important
   &--fff
     &:focus
@@ -40,39 +40,39 @@
   &:disabled
     pointer-events: none
     opacity: .35
-  &.vs-button--animate:not(.vs-button--animate-inactive)
-    .vs-button__content
+  &.vso-button--animate:not(.vso-button--animate-inactive)
+    .vso-button__content
       i
         font-size: 1.15rem
     &:hover
-      .vs-button__content
+      .vso-button__content
         transform: translate(-100%)
-      .vs-button__animate
+      .vso-button__animate
         transform: translate(0%)
-    &.vs-button--animate-vertical
+    &.vso-button--animate-vertical
       &:hover
-        .vs-button__content
+        .vso-button__content
           transform: translate(0,-100%) !important
           opacity: 0
-        .vs-button__animate
+        .vso-button__animate
           transform: translate(0%) !important
-    &.vs-button--animate-scale
+    &.vso-button--animate-scale
       &:hover
-        .vs-button__content
+        .vso-button__content
           transform: scale(1.4) !important
           opacity: 0
-        .vs-button__animate
+        .vso-button__animate
           opacity: 1
           transform: scale(1)
-    &.vs-button--animate-rotate
+    &.vso-button--animate-rotate
       &:hover
-        .vs-button__content
+        .vso-button__content
           transform: rotate(180deg) !important
           opacity: 0
-        .vs-button__animate
+        .vso-button__animate
           opacity: 1
           transform:  rotate(0)
-    .vs-button__content
+    .vso-button__content
       transition: transform .25s ease
 
   &__animate
@@ -117,7 +117,7 @@
      pointer-events: none
      user-select: none
 
-  .vs-button__loading
+  .vso-button__loading
     width: 100%
     height: 100%
     position: absolute
@@ -157,23 +157,23 @@
   // SIZE -----
   &--size-xl
     border-radius: 20px
-    .vs-button__content
+    .vso-button__content
       padding: 15px 20px
       font-size: 1.1rem
   &--size-large
     font-size: 1rem
     border-radius: 15px
-    .vs-button__content
+    .vso-button__content
       padding: 10px 15px
   &--size-small
     font-size: .75rem
     border-radius: 9px
-    .vs-button__content
+    .vso-button__content
       padding: 5px 10px
   &--size-mini
     font-size: .6rem
     border-radius: 7px
-    .vs-button__content
+    .vso-button__content
       padding: 3px 8px
   // SIZE - CLOSE -----
 
@@ -187,27 +187,27 @@
     display: flex
     align-items: center
     justify-content: center
-    .vs-button__content
+    .vso-button__content
       padding: 8px 8px
     i
       font-size: 1.15rem
 
   // Type Button Style
 
-.vs-button--default
+.vso-button--default
   background: -color(color, 1)
   color: #fff
-  &.vs-button--active
+  &.vso-button--active
     box-shadow: 0px 10px 20px -10px -color(color, 1)
     transform: translate(0,-3px)
   &:hover
     box-shadow: 0px 10px 20px -10px -color(color, 1)
     transform: translate(0,-3px)
 
-.vs-button--flat
+.vso-button--flat
   background: -color(color, .15)
   color: -color(color, 1)
-  &.vs-button--dark
+  &.vso-button--dark
     color: -color(text, 1)
   &:hover
     background: -color(color, .25)
@@ -215,11 +215,11 @@
     color: #fff
     background: -color(color, 1)
     transition: all .25s ease, background .25s ease .25s
-  &.vs-button--active
+  &.vso-button--active
     background: -color(color, 1)
     color: #fff
 
-.vs-button--floating
+.vso-button--floating
   background: -color(color, 1)
   color: #fff
   box-shadow: 0px 8px 20px -6px -color(color, 1)
@@ -230,11 +230,11 @@
   &:focus
     transform: translate(0,0px)
     box-shadow: 0px 0px 0px 0px -color(color, 1)
-  &.vs-button--active
+  &.vso-button--active
     transform: translate(0,0px)
     box-shadow: 0px 0px 0px 0px -color(color, 1)
 
-.vs-button--border
+.vso-button--border
   background: -color(color, 0)
   color: -color(color, 1)
   &:before
@@ -256,15 +256,15 @@
   &:focus
     color: #fff
     background: -color(color, 1)
-  &.vs-button--active
+  &.vso-button--active
     background: -color(color, 1)
     color: #fff
 
-.vs-button--gradient
+.vso-button--gradient
   background: -color('color')
   color: #fff
   overflow: hidden
-  &.vs-button--primary, &.vs-button--success
+  &.vso-button--primary, &.vso-button--success
     &::before
       filter: hue-rotate(40deg)
   &::before
@@ -288,19 +288,19 @@
     &::before
       opacity: 0
       // transform: translate(50%, -50%)
-  &.vs-button--active
+  &.vso-button--active
     transform: translate(0, -3px)
     box-shadow: 0px 10px 20px -10px rgba(0,0,0,.35)
 
-.vs-button--relief
+.vso-button--relief
   background: -color('color')
   color: #fff
   overflow: hidden
   transform: translate(0) scale(1,1)
-  .vs-button__content
+  .vso-button__content
     transition: all .25s ease
-  &.vs-button--icon
-    &.vs-button--active
+  &.vso-button--icon
+    &.vso-button--active
       height: auto
   &::before
     content: ''
@@ -318,18 +318,18 @@
     box-sizing: border-box
   &:active
     transform: translate(0,1px)
-    .vs-button__content
+    .vso-button__content
       padding-bottom: 6px
     &::before
       border-bottom: 0px solid -color('color')
-  &.vs-button--active
+  &.vso-button--active
     transform: translate(0,1px)
-    .vs-button__content
+    .vso-button__content
       padding-bottom: 6px
     &::before
       border-bottom: 0px solid -color('color')
 
-.vs-button--transparent
+.vso-button--transparent
   background: transparent
   color: -color('color')
   overflow: hidden
@@ -349,31 +349,31 @@
     transform: scale(.5)
     opacity: 0
     box-sizing: border-box
-  &:active:not(.vs-button--active)
+  &:active:not(.vso-button--active)
     &::before
       transform: scale(.9) !important
   &:hover
     &::before
       opacity: 1
       transform: scale(1)
-  &.vs-button--active
+  &.vso-button--active
     &::before
       background: -color('color', .2)
       opacity: 1
       transform: scale(1)
 
-.vs-button--shadow
+.vso-button--shadow
   background: -color('background')
   color: -color('text')
   overflow: hidden
   box-shadow: 0px 0px 0px 0px rgba(0,0,0, -var(shadow-opacity))
-  &:active:not(.vs-button--active)
+  &:active:not(.vso-button--active)
     transform: translate(0,-1px)
     box-shadow: 0px 5px 15px 0px rgba(0,0,0, -var(shadow-opacity)) !important
   &:hover
     transform: translate(0,-3px)
     box-shadow: 0px 8px 25px 0px rgba(0,0,0, -var(shadow-opacity))
-  &.vs-button--active
+  &.vso-button--active
     transform: translate(0,-3px)
     box-shadow: 0px 8px 25px 0px rgba(0,0,0, -var(shadow-opacity))
 

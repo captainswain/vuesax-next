@@ -39,7 +39,7 @@ export default class VsOptionGroup extends VsComponent {
 
   public render(h: any): VNode {
     return h('div', {
-      staticClass: 'vs-select__option-group',
+      staticClass: 'vso-select__option-group',
       class: [
         {
           hiddenOptionGroup: this.hiddenOptionGroup

@@ -1,5 +1,5 @@
 import { VNode } from 'vue'
-import { Component, Inject, Prop, Watch  } from 'vue-property-decorator'
+import { Component, Inject, Prop, Watch } from 'vue-property-decorator'
 import VsComponent from '../../../mixins/component'
 import '../../vsCheckbox/Base/style.sass'
 import vsCheckbox from '../../vsCheckbox/Base/vsCheckbox'
@@ -8,7 +8,7 @@ import vsCheckbox from '../../vsCheckbox/Base/vsCheckbox'
 export default class VsSelectOption extends VsComponent {
   @Prop({}) value!: any
 
-  @Prop({type: Boolean, default: false}) disabled: boolean
+  @Prop({ type: Boolean, default: false }) disabled: boolean
 
   // @Inject()
   // select: any
@@ -38,7 +38,7 @@ export default class VsSelectOption extends VsComponent {
 
   get isActive() {
     return typeof this.getParent().value == 'number' ?
-    this.getParent().value == this.value : this.getParent().value.indexOf(this.value) !== -1
+      this.getParent().value == this.value : this.getParent().value.indexOf(this.value) !== -1
   }
 
   get isHover() {
@@ -51,7 +51,7 @@ export default class VsSelectOption extends VsComponent {
 
   getParent() {
     return (this.$parent as any).isSelect && (this.$parent as any)
-    || (this.$parent.$parent as any).isSelect && (this.$parent.$parent as any)
+      || (this.$parent.$parent as any).isSelect && (this.$parent.$parent as any)
   }
 
   mounted() {
@@ -75,7 +75,7 @@ export default class VsSelectOption extends VsComponent {
       attrs: {
         disabled: this.disabled
       },
-      staticClass: 'vs-select__option',
+      staticClass: 'vso-select__option',
       class: [{
         activeOption: this.isActive,
         isHover: this.isHover,

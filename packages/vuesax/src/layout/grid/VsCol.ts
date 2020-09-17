@@ -28,20 +28,20 @@ export default class VsCol extends Vue {
   public render(h: any): VNode {
 
     const vsCol = h('div', {
-      staticClass: 'vs-col',
+      staticClass: 'vso-col',
       style: {
         order: this.order,
         display: this.type,
         justifyContent: this.justify,
       },
       class: [
-        `vs-col--w-${this.w}`,
-        `vs-col--offset-${this.offset}`,
-        `vs-col--lg-${this.lg}`,
-        `vs-col--sm-${this.sm}`,
-        `vs-col--xs-${this.xs}`,
+        `vso-col--w-${this.w}`,
+        `vso-col--offset-${this.offset}`,
+        `vso-col--lg-${this.lg}`,
+        `vso-col--sm-${this.sm}`,
+        `vso-col--xs-${this.xs}`,
       ]
-    }, this.$slots.default )
+    }, this.$slots.default)
 
     return vsCol
   }

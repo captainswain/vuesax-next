@@ -2,7 +2,7 @@
 @import '../../../styles/colors'
 @import 'root'
 
-.vs-alert
+.vso-alert
   background: -color('color', .1)
   color: -color('color', 1)
   width: 100%
@@ -35,12 +35,12 @@
   &--solid
     background: -color('color', 1)
     color: #fff
-    .vs-alert__icon
+    .vso-alert__icon
       i
         color: #fff
       svg
         fill: #fff
-    .vs-alert__close
+    .vso-alert__close
       color: #fff
       box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .15)
       &:hover
@@ -70,12 +70,12 @@
     background: -color('color', 1)
     color: #fff
     border-radius: 12px
-    .vs-alert__icon
+    .vso-alert__icon
       i
         color: #fff
       svg
         fill: #fff
-    .vs-alert__close
+    .vso-alert__close
       color: #fff
       box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .15)
       &:hover
@@ -103,12 +103,12 @@
     color: #fff
     border-radius: 12px
     box-shadow: 6px 6px 0px 0px -color('color', .3)
-    .vs-alert__icon
+    .vso-alert__icon
       i
         color: #fff
       svg
         fill: #fff
-    .vs-alert__close
+    .vso-alert__close
       color: #fff
       box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .15)
       &:hover
@@ -122,7 +122,7 @@
 
 
 
-.vs-alert__title
+.vso-alert__title
   font-weight: 600
   font-size: 1rem
   padding: 15px
@@ -132,12 +132,12 @@
   &--clickHidden
     cursor: pointer
     padding-right: 0px
-  ~ .vs-alert__content
-    .vs-alert__content__text
+  ~ .vso-alert__content
+    .vso-alert__content__text
       padding-top: 0px
 
 
-.vs-alert__content
+.vso-alert__content
   transition: height .25s ease
   overflow: hidden
   &__text
@@ -146,7 +146,7 @@
     padding-bottom: 20px
 
 
-.vs-alert__close
+.vso-alert__close
   position: absolute
   top: 9px
   right: 6px
@@ -170,7 +170,7 @@
   svg
     fill: -color('color')
 
-.vs-alert__footer
+.vso-alert__footer
   position: relative
   width: 100%
   padding: 10px 15px
@@ -179,7 +179,7 @@
   align-items: center
   justify-content: flex-end
 
-.vs-alert__icon
+.vso-alert__icon
   position: absolute
   width: 50px
   height: 100%
@@ -196,14 +196,14 @@
     width: 24px
     height: 24px
     fill: -color('color', 1)
-  ~ .vs-alert__footer
+  ~ .vso-alert__footer
     padding-left: 35px
-  ~ .vs-alert__content
+  ~ .vso-alert__content
     padding-left: 20px
-  ~ .vs-alert__title
+  ~ .vso-alert__title
     padding-left: 35px
 
-.vs-alert__progress
+.vso-alert__progress
   width: 100%
   position: absolute
   bottom: 0px
@@ -218,7 +218,7 @@
     background: -color('color', 1)
     transition: all .25s ease
 
-.vs-alert__pagination
+.vso-alert__pagination
   position: relative
   padding: 0px 20px
   display: flex
