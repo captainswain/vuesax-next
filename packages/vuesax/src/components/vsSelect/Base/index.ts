@@ -1,5 +1,5 @@
 import './style.sass'
-import component from './VsSelect'
+import component from './vsSelect'
 
 component.install = (vue: any) => {
   vue.component('vso-select', component)

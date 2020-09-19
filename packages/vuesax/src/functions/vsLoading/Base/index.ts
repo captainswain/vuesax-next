@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import './style.sass'
-import component from './VsLoading'
+import component from './vsLoading'
 
 interface LoadingParams {
   type?: string
@@ -18,7 +18,7 @@ interface LoadingParams {
 const loadingConstructor = Vue.extend(component)
 
 // tslint:disable-next-line:only-arrow-functions
-loadingConstructor.prototype.close = function() {
+loadingConstructor.prototype.close = function () {
   this.isVisible = false
   document.body.style.overflowY = 'auto'
   setTimeout(() => {
@@ -27,19 +27,19 @@ loadingConstructor.prototype.close = function() {
   }, 250);
 }
 
-loadingConstructor.prototype.changePercent = function(val: string) {
+loadingConstructor.prototype.changePercent = function (val: string) {
   if (val) {
     this.percent = val
   }
 }
 
-loadingConstructor.prototype.changeProgress = function(val: number) {
+loadingConstructor.prototype.changeProgress = function (val: number) {
   if (val) {
     this.progress = val
   }
 }
 
-loadingConstructor.prototype.changeText = function(val: string) {
+loadingConstructor.prototype.changeText = function (val: string) {
   if (val) {
     this.text = val
   }
@@ -48,7 +48,7 @@ loadingConstructor.prototype.changeText = function(val: string) {
 const loading = (params: LoadingParams = {}) => {
   const instance = new loadingConstructor()
 
-  if (typeof params.target === 'string' ) {
+  if (typeof params.target === 'string') {
     params.target = document.querySelector(params.target)
     instance.$data.target = params.target
   } else if (params.target) {

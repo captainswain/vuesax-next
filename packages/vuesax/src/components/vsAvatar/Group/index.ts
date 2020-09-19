@@ -1,5 +1,5 @@
 import './style.sass'
-import component from './VsAvatarGroup'
+import component from './vsAvatarGroup'
 
 component.install = (vue: any) => {
   vue.component('vso-avatar-group', component)
