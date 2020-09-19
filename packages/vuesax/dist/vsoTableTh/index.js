@@ -1,5 +1,5 @@
 /*!
-  * Vuesax v4.0.1-alpha.21 🖖 (https://lusaxweb.github.io/vuesax/)
+  * Vuesax v4.0.1-alpha.22 🖖 (https://lusaxweb.github.io/vuesax/)
   * Forged by Luis Daniel Rovira
   * Released under the MIT License.
   * Donate: https://www.patreon.com/bePatron?c=1567892

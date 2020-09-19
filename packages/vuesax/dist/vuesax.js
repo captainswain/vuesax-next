@@ -1,5 +1,5 @@
 /*!
-  * Vuesax v4.0.1-alpha.21 🖖 (https://lusaxweb.github.io/vuesax/)
+  * Vuesax v4.0.1-alpha.22 🖖 (https://lusaxweb.github.io/vuesax/)
   * Forged by Luis Daniel Rovira
   * Released under the MIT License.
   * Donate: https://www.patreon.com/bePatron?c=1567892
@@ -17578,28 +17578,28 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 var components_namespaceObject = {};
 __webpack_require__.r(components_namespaceObject);
-__webpack_require__.d(components_namespaceObject, "vsButton", function() { return Base; });
-__webpack_require__.d(components_namespaceObject, "vsButtonGroup", function() { return group; });
-__webpack_require__.d(components_namespaceObject, "vsAlert", function() { return vsAlert_Base; });
-__webpack_require__.d(components_namespaceObject, "vsInput", function() { return vsInput_Base; });
-__webpack_require__.d(components_namespaceObject, "vsCheckbox", function() { return vsCheckbox_Base; });
-__webpack_require__.d(components_namespaceObject, "vsSwitch", function() { return vsSwitch_Base; });
-__webpack_require__.d(components_namespaceObject, "vsSelect", function() { return vsSelect_Base; });
-__webpack_require__.d(components_namespaceObject, "vsOption", function() { return Option; });
-__webpack_require__.d(components_namespaceObject, "vsOptionGroup", function() { return OptionGroup; });
-__webpack_require__.d(components_namespaceObject, "vsAvatar", function() { return vsAvatar_Base; });
-__webpack_require__.d(components_namespaceObject, "vsAvatarGroup", function() { return Group; });
-__webpack_require__.d(components_namespaceObject, "vsRadio", function() { return vsRadio_Base; });
-__webpack_require__.d(components_namespaceObject, "vsTooltip", function() { return vsTooltip_Base; });
-__webpack_require__.d(components_namespaceObject, "vsDialog", function() { return vsDialog_Base; });
-__webpack_require__.d(components_namespaceObject, "vsPagination", function() { return vsPagination_Base; });
-__webpack_require__.d(components_namespaceObject, "vsTable", function() { return vsTable_Base; });
-__webpack_require__.d(components_namespaceObject, "vsTableTr", function() { return Tr; });
-__webpack_require__.d(components_namespaceObject, "vsTableTh", function() { return Th; });
-__webpack_require__.d(components_namespaceObject, "vsTableTd", function() { return Td; });
-__webpack_require__.d(components_namespaceObject, "vsNavbar", function() { return vsNavbar_Base; });
-__webpack_require__.d(components_namespaceObject, "vsNavbarItem", function() { return Item; });
-__webpack_require__.d(components_namespaceObject, "vsNavbarGroup", function() { return vsNavbar_Group; });
+__webpack_require__.d(components_namespaceObject, "vsoButton", function() { return Base; });
+__webpack_require__.d(components_namespaceObject, "vsoButtonGroup", function() { return group; });
+__webpack_require__.d(components_namespaceObject, "vsoAlert", function() { return vsAlert_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoInput", function() { return vsInput_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoCheckbox", function() { return vsCheckbox_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoSwitch", function() { return vsSwitch_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoSelect", function() { return vsSelect_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoOption", function() { return Option; });
+__webpack_require__.d(components_namespaceObject, "vsoOptionGroup", function() { return OptionGroup; });
+__webpack_require__.d(components_namespaceObject, "vsoAvatar", function() { return vsAvatar_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoAvatarGroup", function() { return Group; });
+__webpack_require__.d(components_namespaceObject, "vsoRadio", function() { return vsRadio_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoTooltip", function() { return vsTooltip_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoDialog", function() { return vsDialog_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoPagination", function() { return vsPagination_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoTable", function() { return vsTable_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoTableTr", function() { return Tr; });
+__webpack_require__.d(components_namespaceObject, "vsoTableTh", function() { return Th; });
+__webpack_require__.d(components_namespaceObject, "vsoTableTd", function() { return Td; });
+__webpack_require__.d(components_namespaceObject, "vsoNavbar", function() { return vsNavbar_Base; });
+__webpack_require__.d(components_namespaceObject, "vsoNavbarItem", function() { return Item; });
+__webpack_require__.d(components_namespaceObject, "vsoNavbarGroup", function() { return vsNavbar_Group; });
 var layout_namespaceObject = {};
 __webpack_require__.r(layout_namespaceObject);
 __webpack_require__.d(layout_namespaceObject, "vsRow", function() { return VsRow_VsRow; });
